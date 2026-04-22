@@ -1,5 +1,19 @@
 import type { FaqItem } from "./types";
 
+/**
+ * Logo + voice from the Expression Beyond Words branding guide
+ * (Logo-Detailed-2.pdf — colors sampled from the guide artwork for web parity).
+ */
+export const brand = {
+  logoSrc: "/logo.png",
+  logoAlt: "Expression Beyond Words PLLC logo",
+  lineOfBusiness: "Speech Therapy" as const,
+  taglinePrimary:
+    "Opening a world of language for those with special talents" as const,
+  taglineSecondary:
+    "Sometimes, words are not enough to express the emotions you feel" as const,
+} as const;
+
 export const site = {
   name: "Expression Beyond Words",
   url: "https://expressionbeyondwords.com",

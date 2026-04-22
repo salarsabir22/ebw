@@ -6,77 +6,83 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
-  Design tokens from DESIGN.md (Lumina Speech system).
-  Legacy --ebw-* names are aliases so existing components map cleanly.
+  Brand tokens aligned to Logo-Detailed-2.pdf (Expression Beyond Words):
+  primaries sampled from guide artwork; pastels from icon-usage swatches.
+  Legacy --ebw-* aliases keep existing sections working.
 */
 :root {
-  --surface: #f7fafb;
-  --surface-dim: #d7dadb;
-  --surface-bright: #f7fafb;
+  --brand-pink: #f486ab;
+  --brand-teal: #47a0a5;
+  --brand-rose: #db7572;
+  --brand-peach: #fbb6b6;
+  --brand-blush: #ffc0d7;
+  --brand-mint: #abf4f4;
+
+  --surface: #f8f4ea;
+  --surface-dim: #edd8dc;
+  --surface-bright: #fdfbf6;
   --surface-container-lowest: #ffffff;
-  --surface-container-low: #f1f4f5;
-  --surface-container: #ebeeef;
-  --surface-container-high: #e6e9ea;
-  --surface-container-highest: #e0e3e4;
-  --on-surface: #181c1d;
-  --on-surface-variant: #3f4946;
-  --inverse-surface: #2d3132;
-  --inverse-on-surface: #eef1f2;
-  --outline: #6f7976;
-  --outline-variant: #bec9c5;
-  --surface-tint: #1c6a5d;
-  /* shadcn semantic colors aligned with DESIGN.md teal + soft neutrals */
-  --primary: #1c6a5d;
+  --surface-container-low: #fff5f7;
+  --surface-container: #f8eef2;
+  --surface-container-high: #f3e8ec;
+  --surface-container-highest: #ede2e6;
+  --on-surface: #2a2426;
+  --on-surface-variant: #5c4a50;
+  --inverse-surface: #245658;
+  --inverse-on-surface: #f6fbfb;
+  --outline: #c9a8b0;
+  --outline-variant: #e8ccd4;
+  --surface-tint: var(--brand-teal);
+
+  --primary: var(--brand-teal);
   --on-primary: #ffffff;
-  --primary-container: #5ea597;
-  --on-primary-container: #003830;
-  --secondary: #f1f4f5;
-  --on-secondary: #181c1d;
-  --secondary-container: #fea39e;
-  --on-secondary-container: #793734;
-  --tertiary: #675e42;
+  --primary-container: #a5d8da;
+  --on-primary-container: #0a3032;
+  --secondary: #fce8f0;
+  --on-secondary: #5c2f3d;
+  --secondary-container: #f5d0dc;
+  --on-secondary-container: #4a2630;
+  --tertiary: var(--brand-rose);
   --on-tertiary: #ffffff;
-  --tertiary-container: #a29878;
-  --on-tertiary-container: #373018;
+  --tertiary-container: #f0d4d4;
+  --on-tertiary-container: #3f2226;
   --error: #ba1a1a;
   --on-error: #ffffff;
   --error-container: #ffdad6;
   --on-error-container: #93000a;
-  --on-background: #181c1d;
+  --on-background: #2a2426;
 
-  /* Prose “warm coral” — between YAML secondary hues, for pediatric CTAs */
-  --coral-warm: #e18b86;
+  --coral-warm: var(--brand-pink);
 
-  /* Legacy aliases (components reference these) */
   --ebw-ink: var(--on-background);
   --ebw-muted: var(--on-surface-variant);
   --ebw-border: var(--outline-variant);
   --ebw-cream: var(--surface);
   --ebw-sage: var(--primary);
   --ebw-sage-faint: var(--surface-container-low);
-  --ebw-terracotta: var(--coral-warm);
+  --ebw-terracotta: var(--brand-pink);
   --ebw-footer-bg: var(--inverse-surface);
   --ebw-footer-fg: var(--inverse-on-surface);
 
-  /* Ambient / tinted shadows (DESIGN.md elevation) */
-  --shadow-soft: 0 20px 50px -18px rgba(28, 106, 93, 0.12);
-  --shadow-soft-strong: 0 24px 60px -16px rgba(28, 106, 93, 0.16);
-  --background: #f7fafb;
-  --foreground: #181c1d;
+  --shadow-soft: 0 20px 50px -18px rgba(71, 160, 165, 0.14);
+  --shadow-soft-strong: 0 24px 60px -16px rgba(244, 134, 171, 0.18);
+
+  --background: #f8f4ea;
+  --foreground: #2a2426;
   --card: #ffffff;
-  --card-foreground: #181c1d;
+  --card-foreground: #2a2426;
   --popover: #ffffff;
-  --popover-foreground: #181c1d;
+  --popover-foreground: #2a2426;
   --primary-foreground: #ffffff;
-  --secondary-foreground: #181c1d;
-  --muted: #f1f4f5;
-  --muted-foreground: #3f4946;
-  --accent: #ebeeef;
-  --accent-foreground: #181c1d;
+  --secondary-foreground: #5c2f3d;
+  --muted: #fff5f7;
+  --muted-foreground: #5c4a50;
+  --accent: #f8eef2;
+  --accent-foreground: #2a2426;
   --destructive: #ba1a1a;
-  --border: #bec9c5;
-  --input: #bec9c5;
-  --ring: #1c6a5d;
+  --border: #e8ccd4;
+  --input: #e8ccd4;
+  --ring: var(--brand-teal);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -96,6 +102,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-peach: var(--brand-peach);
+  --color-brand-blush: var(--brand-blush);
+  --color-brand-mint: var(--brand-mint);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-rose: var(--brand-rose);
   --font-heading: var(--font-display);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);

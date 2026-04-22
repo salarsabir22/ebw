@@ -8,6 +8,8 @@ export type HeroConfig = {
   eyebrow: string;
   title: string;
   subtitle: string;
+  /** Optional emotional tagline from the brand guide (e.g. homepage). */
+  brandQuote?: string;
 };
 
 export type FocusCard = {

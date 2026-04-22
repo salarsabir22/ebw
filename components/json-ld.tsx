@@ -1,10 +1,11 @@
-import { contact, site } from "@/content/site";
+import { brand, contact, site } from "@/content/site";
 
 export function JsonLd() {
   const data = {
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     name: site.name,
+    slogan: brand.taglinePrimary,
     url: site.url,
     email: contact.email,
     telephone: contact.phoneDisplay,

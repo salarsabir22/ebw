@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -13,7 +14,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { mainNav } from "@/content/nav";
-import { contact, site } from "@/content/site";
+import { brand, contact, site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 function navLinkClass(href: string, pathname: string | null) {
@@ -50,12 +51,25 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="group min-w-0 shrink leading-tight">
-          <span className="block truncate font-display text-lg font-semibold tracking-tight text-foreground sm:text-xl">
-            {site.name}
-          </span>
-          <span className="block text-xs font-semibold tracking-wide text-muted-foreground">
-            Pediatric speech therapy — in your home
+        <Link
+          href="/"
+          className="group flex min-w-0 max-w-[min(100%,28rem)] shrink items-center gap-3 leading-tight"
+        >
+          <Image
+            src={brand.logoSrc}
+            alt={brand.logoAlt}
+            width={52}
+            height={52}
+            className="size-11 shrink-0 rounded-full object-contain ring-2 ring-[var(--brand-pink)]/35 sm:size-12"
+            priority
+          />
+          <span className="min-w-0">
+            <span className="block truncate font-display text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+              {site.name}
+            </span>
+            <span className="block text-xs font-semibold tracking-wide text-muted-foreground">
+              {brand.lineOfBusiness} · Pediatric care in your home
+            </span>
           </span>
         </Link>
         <nav

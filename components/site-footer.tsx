@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { contact, site } from "@/content/site";
+import { brand, contact, site } from "@/content/site";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -7,10 +8,22 @@ export function SiteFooter() {
     <footer className="border-t border-[var(--outline-variant)] bg-[var(--ebw-footer-bg)] text-[var(--ebw-footer-fg)]">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
-          <p className="font-display text-xl font-semibold">{site.name}</p>
+          <div className="flex items-center gap-3">
+            <Image
+              src={brand.logoSrc}
+              alt={brand.logoAlt}
+              width={48}
+              height={48}
+              className="size-12 shrink-0 rounded-full object-contain ring-2 ring-[var(--brand-pink)]/40"
+            />
+            <p className="font-display text-xl font-semibold">{site.name}</p>
+          </div>
           <p className="mt-3 text-sm leading-relaxed text-[color-mix(in_srgb,var(--ebw-footer-fg)_78%,transparent)]">
             In-home pediatric speech therapy serving Northwest Houston and The
             Woodlands area communities.
+          </p>
+          <p className="mt-3 text-sm font-medium leading-relaxed text-[color-mix(in_srgb,var(--ebw-footer-fg)_88%,transparent)]">
+            {brand.taglinePrimary}
           </p>
         </div>
         <div>

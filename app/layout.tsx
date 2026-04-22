@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Lexend, Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Quicksand } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const lexend = Lexend({
+const quicksand = Quicksand({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description:
-    "In-home pediatric speech therapy in Northwest Houston with Verda Butt, M.S., CCC-SLP—play-based care, bilingual support, evaluations, and parent coaching.",
+    "In-home pediatric speech therapy in Northwest Houston with Verda Butt, M.S., CCC-SLP—play-based care, bilingual support, evaluations, and parent coaching. Opening a world of language for those with special talents.",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", plusJakarta.variable, lexend.variable)}
+      className={cn("h-full", plusJakarta.variable, quicksand.variable)}
     >
       <body
         className={cn(

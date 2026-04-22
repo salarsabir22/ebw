@@ -31,7 +31,7 @@ export function Hero({
         className="pointer-events-none absolute inset-0 opacity-80"
         style={{
           background:
-            "radial-gradient(880px 520px at 18% 0%, color-mix(in srgb, var(--primary-container) 26%, transparent), transparent 58%), radial-gradient(720px 440px at 92% 12%, color-mix(in srgb, var(--coral-warm) 20%, transparent), transparent 52%)",
+            "radial-gradient(880px 520px at 18% 0%, color-mix(in srgb, var(--brand-teal) 22%, transparent), transparent 58%), radial-gradient(720px 440px at 92% 12%, color-mix(in srgb, var(--brand-pink) 18%, transparent), transparent 52%)",
         }}
       />
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
@@ -52,6 +52,11 @@ export function Hero({
             <p className="mt-5 max-w-2xl text-lg font-normal leading-relaxed text-muted-foreground sm:text-[1.125rem]">
               {hero.subtitle}
             </p>
+            {hero.brandQuote ? (
+              <p className="mt-5 max-w-2xl text-lg font-medium leading-snug text-[var(--brand-rose)] sm:text-[1.125rem]">
+                {hero.brandQuote}
+              </p>
+            ) : null}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link href={primaryCtaHref} className={primaryBtn}>
                 Request information

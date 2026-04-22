@@ -1,4 +1,4 @@
-import { site } from "./site";
+import { brand, site } from "./site";
 import type { PageConfig } from "./types";
 
 export const homePage: PageConfig = {
@@ -10,10 +10,11 @@ export const homePage: PageConfig = {
     path: "/",
   },
   hero: {
-    eyebrow: "In-home pediatric care",
+    eyebrow: brand.taglinePrimary,
     title: "In-home pediatric speech therapy in Northwest Houston",
     subtitle:
       "Helping children build strong communication skills through personalized, play-based therapy in the comfort of home—with a focus on early intervention.",
+    brandQuote: brand.taglineSecondary,
   },
   areas: {
     title: "Serving Northwest Houston families",
