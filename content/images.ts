@@ -10,10 +10,10 @@ export type PageImage = {
 };
 
 export const images = {
-  /** Home hero — warm pediatric / play context (Unsplash) */
+  /** Home hero — warm pediatric context (Unsplash; stable photo id) */
   homeHero: {
-    src: "https://images.unsplash.com/photo-1587654780294-555ccb333b04?auto=format&fit=crop&w=1600&q=82",
-    alt: "Young child playing with colorful toys in a bright, calm room",
+    src: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1600&q=82",
+    alt: "Child and caregiver in a bright, calm moment at home",
   } satisfies PageImage,
   /** Services page — family connection (Unsplash) */
   servicesHero: {
