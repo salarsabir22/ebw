@@ -4,16 +4,19 @@
  */
 const zy = "https://assets.zyrosite.com/m6L2D4JRl7ioV6BG";
 
+/** In-home session photo from expressionbeyondwords.com (Zyrosite CDN) */
+const zySessionInHome = `${zy}/2149110208-nT8YdFCxY4Fhg8rW.jpg`;
+
 export type PageImage = {
   src: string;
   alt: string;
 };
 
 export const images = {
-  /** Home hero — warm pediatric context (Unsplash; stable photo id) */
+  /** Home hero — real in-home pediatric speech therapy context (EBW site asset) */
   homeHero: {
-    src: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1600&q=82",
-    alt: "Child and caregiver in a bright, calm moment at home",
+    src: zySessionInHome,
+    alt: "In-home pediatric speech therapy session focused on communication and connection",
   } satisfies PageImage,
   /** Services page — family connection (Unsplash) */
   servicesHero: {
@@ -32,7 +35,7 @@ export const images = {
   } satisfies PageImage,
   /** From current EBW site — in-home session context */
   siteSessionA: {
-    src: `${zy}/2149110208-nT8YdFCxY4Fhg8rW.jpg`,
+    src: zySessionInHome,
     alt: "In-home pediatric speech therapy session in a comfortable setting",
   } satisfies PageImage,
   siteSessionB: {
