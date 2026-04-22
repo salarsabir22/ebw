@@ -21,6 +21,13 @@ const quicksand = Quicksand({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180" }],
+  },
   title: {
     default: `${site.name} | In-home pediatric speech therapy`,
     template: `%s | ${site.name}`,
