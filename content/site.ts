@@ -29,11 +29,11 @@ export const contact = {
 } as const;
 
 export const servicesOffered = [
-  "Speech & language screenings (early identification)",
-  "Comprehensive evaluations with detailed reports",
-  "Individualized in-home therapy sessions",
-  "Parent coaching & ongoing support",
-  "IEP consultation & meeting representation",
+  "Speech & Language Screenings (early identification)",
+  "Comprehensive Evaluations with detailed reports",
+  "Individualized In-Home Therapy Sessions",
+  "Parent Coaching & Ongoing Support",
+  "IEP Consultation & Meeting Representation",
 ] as const;
 
 export const iepNote =
@@ -53,22 +53,22 @@ export const pricing = {
   ],
   bundles: [
     {
-      name: "“Double-Up” bundle",
+      name: "“Double-Up” Bundle",
       lines: [
-        "2 × 30-minute sessions: $140 (save $20)",
-        "2 × 45-minute sessions: $162 (save $18)",
+        "2 × 30-Minute Sessions: $140 (Save $20)",
+        "2 × 45-Minute Sessions: $162 (Save $18)",
       ],
     },
     {
-      name: "“Monthly Progress” bundle",
+      name: "“Monthly Progress” Bundle",
       lines: [
-        "4 × 30-minute sessions: $290 (save $30)",
-        "4 × 45-minute sessions: $324 (save $36)",
+        "4 × 30-Minute Sessions: $290 (Save $30)",
+        "4 × 45-Minute Sessions: $324 (Save $36)",
       ],
     },
   ],
   travel: {
-    title: "Travel policy",
+    title: "Travel Policy",
     freeRadiusMiles: 10,
     zips: [
       "77380",

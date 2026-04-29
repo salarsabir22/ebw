@@ -1,16 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
 import { AboutBlock } from "@/components/blocks/about-block";
-import { AreasSection } from "@/components/blocks/areas-section";
-import { FocusCardsSection } from "@/components/blocks/focus-cards";
-import { TherapyStack } from "@/components/blocks/therapy-stack";
+import {
+  CollaboratorsSection,
+  PlayApproachSection,
+  WhyChooseSection,
+} from "@/components/blocks/therapy-stack";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
+import { ServicesPricing } from "@/components/services-pricing";
 import { SiteShell } from "@/components/site-shell";
+import { buttonVariants } from "@/components/ui/button";
 import { images } from "@/content/images";
+import {
+  woodlandsBundlePricing,
+  woodlandsPage,
+  woodlandsServicesPricing,
+} from "@/content/woodlands";
 import { site } from "@/content/site";
-import { woodlandsPage } from "@/content/woodlands";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -25,19 +32,45 @@ export const metadata: Metadata = {
 };
 
 export default function WoodlandsPage() {
+  const story = woodlandsPage.bilingual;
+  const finalPrimary = woodlandsPage.finalCta.primaryCta;
+  const finalSecondary = woodlandsPage.finalCta.secondaryCta;
+
   return (
     <SiteShell>
-      <Hero
-        hero={woodlandsPage.hero}
-        image={images.siteBanner}
-        primaryCtaHref="/contact"
-      />
-      <AreasSection areas={woodlandsPage.areas} linkWoodlandsPage={false} />
-      <FocusCardsSection cards={woodlandsPage.focusCards} />
+      <Hero hero={woodlandsPage.hero} image={images.siteBanner} />
       <AboutBlock about={woodlandsPage.about} image={images.siteSessionA} />
-      <TherapyStack config={woodlandsPage} />
+      {story ? (
+        <Section
+          eyebrow="The Woodlands"
+          title={story.title}
+          className="bg-[var(--surface-container-low)]"
+        >
+          <div className="mt-6 space-y-4 text-lg leading-relaxed text-[var(--ebw-muted)]">
+            {story.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
+        </Section>
+      ) : null}
+      <ServicesPricing
+        sectionId="woodlands-services"
+        eyebrow={woodlandsServicesPricing.sectionEyebrow}
+        title={woodlandsServicesPricing.sectionTitle}
+        intro={woodlandsServicesPricing.intro}
+        servicesList={woodlandsServicesPricing.servicesList}
+        evaluationLabel={woodlandsServicesPricing.evaluationLabel}
+        evaluationDetail={woodlandsServicesPricing.evaluationDetail}
+        therapySessionsHeading={woodlandsServicesPricing.therapySessionsHeading}
+        bundles={woodlandsBundlePricing}
+        bundlesAreaTitle={woodlandsServicesPricing.bundlesAreaTitle}
+        travelCustom={woodlandsServicesPricing.travel}
+      />
+      <PlayApproachSection playBased={woodlandsPage.playBased} showOutro={false} />
+      <CollaboratorsSection collaborators={woodlandsPage.collaborators} />
+      <WhyChooseSection why={woodlandsPage.why} />
       <Section
-        eyebrow="Scheduling"
+        eyebrow="Get started"
         title={woodlandsPage.finalCta.title}
         className="bg-muted/50"
       >
@@ -45,24 +78,28 @@ export default function WoodlandsPage() {
           {woodlandsPage.finalCta.body}
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/contact"
-            className={cn(
-              buttonVariants({ variant: "default", size: "lg" }),
-              "min-h-11 px-6 text-base shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft-strong)]",
-            )}
-          >
-            Send an inquiry
-          </Link>
-          <Link
-            href="/pricing"
-            className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "min-h-11 border-primary px-6 text-base text-primary shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:bg-muted",
-            )}
-          >
-            View pricing
-          </Link>
+          {finalPrimary ? (
+            <Link
+              href={finalPrimary.href}
+              className={cn(
+                buttonVariants({ variant: "default", size: "lg" }),
+                "min-h-11 px-6 text-base shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft-strong)]",
+              )}
+            >
+              {finalPrimary.label}
+            </Link>
+          ) : null}
+          {finalSecondary ? (
+            <Link
+              href={finalSecondary.href}
+              className={cn(
+                buttonVariants({ variant: "outline", size: "lg" }),
+                "min-h-11 border-primary px-6 text-base text-primary shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:bg-muted",
+              )}
+            >
+              {finalSecondary.label}
+            </Link>
+          ) : null}
         </div>
       </Section>
     </SiteShell>

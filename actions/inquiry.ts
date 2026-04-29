@@ -1,7 +1,7 @@
 "use server";
 
 import { z } from "zod";
-import { sendInquiryEmail } from "@/lib/resend";
+import { sendInquiryEmail } from "@/lib/send-inquiry-email";
 
 export type InquiryState = {
   ok: boolean;
@@ -66,7 +66,8 @@ export async function submitInquiry(
       newsletter: data.newsletter,
       pagePath: data.pagePath || "/",
     });
-  } catch {
+  } catch (err) {
+    console.error("[submitInquiry]", err);
     return {
       ok: false,
       message:

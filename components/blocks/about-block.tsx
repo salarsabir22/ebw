@@ -34,7 +34,11 @@ export function AboutBlock({
           </li>
         ))}
       </ul>
-      <p className="mt-6 text-[var(--ebw-muted)]">{about.closing}</p>
+      <div className="mt-6 space-y-4 text-[var(--ebw-muted)]">
+        {about.closingParagraphs.map((p, i) => (
+          <p key={i}>{p}</p>
+        ))}
+      </div>
     </div>
   );
 

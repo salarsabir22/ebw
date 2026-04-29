@@ -1,18 +1,41 @@
-import { site } from "./site";
-import type { PageConfig } from "./types";
+import type { PageConfig, ServicesPricingBundle } from "./types";
+
+/** Bundles + line copy for The Woodlands services section. */
+export const woodlandsBundlePricing: readonly ServicesPricingBundle[] = [
+  {
+    name: "Double Up Bundle",
+    lines: [
+      "2 × 30 min: $140 (Save $20)",
+      "2 × 45 min: $162 (Save $18)",
+    ],
+  },
+  {
+    name: "Monthly Progress Bundle",
+    lines: [
+      "4 × 30 min: $290 (Save $30)",
+      "4 × 45 min: $324 (Save $36)",
+    ],
+  },
+];
 
 export const woodlandsPage: PageConfig = {
   seo: {
-    title: "In-Home Pediatric Speech Therapy in The Woodlands, TX | Expression Beyond Words",
+    title: "In Home Pediatric Speech Therapy in The Woodlands, TX | Expression Beyond Words",
     description:
-      "Mobile pediatric speech therapy in The Woodlands and nearby Montgomery County communities. Play-based, relationship-focused care with Verda Butt, M.S., CCC-SLP.",
+      "Mobile pediatric speech therapy in The Woodlands and nearby Montgomery County. Play-based, in-home sessions, evaluations, and parent coaching with Verda Butt, M.S., CCC-SLP.",
     path: "/in-home-pediatric-speech-therapy-the-woodlands",
   },
   hero: {
     eyebrow: "The Woodlands & Montgomery County",
-    title: "In-home pediatric speech therapy in The Woodlands, TX",
+    title: "In Home Pediatric Speech Therapy in The Woodlands, TX",
     subtitle:
-      "Helping children build strong communication skills through personalized, play-based therapy delivered at home—with a focus on early intervention and lasting progress.",
+      "Helping children build strong communication skills through personalized, play based therapy delivered in the comfort of your home, with a focus on early intervention and lasting progress.",
+    supportingParagraph:
+      "We support toddlers and school aged children with speech, language, fluency, and autism related communication needs.",
+    primaryCta: { label: "Book a Consultation", href: "/contact" },
+    secondaryCta: { label: "Schedule an Evaluation", href: "/contact" },
+    servingLine:
+      "📍 Serving: The Woodlands & nearby Montgomery County communities",
   },
   areas: {
     title: "Serving The Woodlands families",
@@ -36,27 +59,34 @@ export const woodlandsPage: PageConfig = {
     },
   ],
   about: {
-    title: "Licensed pediatric speech therapist serving The Woodlands, TX",
+    title: "Licensed Pediatric Speech Therapist Serving The Woodlands, TX",
     paragraphs: [
-      `Hi, I’m Verda, ${site.credentials} I provide in-home pediatric speech therapy in The Woodlands, supporting children with a strong focus on early intervention and functional communication skills.`,
-      "My approach is child-centered, play-based, and relationship-focused. I collaborate closely with parents, teachers, and other therapists to ensure consistent progress across all environments.",
+      "Hi, I’m Verda, an ASHA certified Speech Language Pathologist with a Master’s degree in Communication Sciences and Disorders from Baylor University. I provide in home pediatric speech therapy in The Woodlands, supporting children with a strong focus on early intervention and functional communication skills.",
     ],
     specialtiesTitle: "I specialize in working with children who experience:",
     specialties: [
       "Speech sound disorders",
       "Language delays and disorders",
       "Fluency challenges (stuttering)",
-      "Autism-related communication difficulties",
+      "Autism related communication difficulties",
       "AAC and gestalt language processing needs",
     ],
-    closing:
-      "Whether your child has a speech delay, language difficulty, or autism-related communication challenges, we provide structured support designed to meet their individual needs.",
+    closingParagraphs: [
+      "My approach is child centered, play based, and relationship focused. I also collaborate closely with parents, teachers, and other therapists to ensure consistent progress across all environments.",
+    ],
   },
-  bilingual: null,
+  bilingual: {
+    title: "In Home Pediatric Speech Therapy in The Woodlands That Comes to You",
+    paragraphs: [
+      "Finding the right support for your child should not be stressful. We provide mobile speech therapy in The Woodlands, bringing professional care directly to your home so your child can learn in a comfortable and familiar environment.",
+      "Early intervention in a natural setting often leads to stronger communication outcomes, improved engagement, and faster progress.",
+      "Whether your child has a speech delay, language difficulty, or autism-related communication challenges, we provide structured support designed to meet their individual needs.",
+    ],
+  },
   playBased: {
-    title: "Play-based speech therapy that builds real communication skills",
+    title: "Play Based Speech Therapy That Builds Real Communication Skills",
     intro:
-      "Children learn best through meaningful interaction. Our sessions combine structured, evidence-based strategies with play to encourage natural communication development.",
+      "Children learn best through meaningful interaction. Our sessions combine structured, evidence based strategies with play to encourage natural communication development.",
     outcomes: [
       "Improve speech clarity",
       "Develop language comprehension and expression",
@@ -64,15 +94,18 @@ export const woodlandsPage: PageConfig = {
     ],
     checklist: [
       "Individualized treatment goals",
-      "Functional, real-life communication focus",
+      "Functional, real life communication focus",
       "Strong early intervention support",
     ],
-    outro:
-      "Our mobile therapy model removes travel barriers and allows therapy to happen where your child feels most comfortable.",
+    outcomesHeading: "We help children:",
+    checklistHeading: "",
+    outcomesUseCheckmarks: false,
   },
   collaborators: {
-    title: "We collaborate with:",
-    intro: "Team-based care helps skills carry over faster—and last longer.",
+    title: "Convenient In Home Speech Therapy in The Woodlands",
+    intro:
+      "Our mobile therapy model removes travel barriers and allows therapy to happen where your child feels most comfortable.",
+    listHeading: "We collaborate with:",
     list: [
       "Parents and caregivers",
       "Teachers",
@@ -81,29 +114,58 @@ export const woodlandsPage: PageConfig = {
       "Medical specialists",
     ],
     closing:
-      "This team-based approach ensures consistency and better long-term progress.",
+      "This team based approach ensures consistency and better long term progress.",
   },
   why: {
-    title: "Why families in The Woodlands choose us",
-    intro:
-      "In-home therapy should feel organized, transparent, and truly individualized.",
+    title: "Why Families in The Woodlands Choose Us",
     points: [
-      "In-home convenience and comfort",
+      "In home convenience and comfort",
       "Strong focus on early intervention",
       "Individualized therapy plans",
       "Evidence-based clinical practices",
-      "Family-centered collaboration",
+      "Family centered collaboration",
       "Specialized support for autism and speech delays",
     ],
     closing:
-      "We don’t just provide therapy—we support your child’s communication journey from every angle.",
+      "We don’t just provide therapy we support your child’s communication journey from every angle.",
   },
   finalCta: {
-    title: "Book in-home pediatric speech therapy in The Woodlands",
-    body: "If your child is experiencing speech or language challenges, early intervention can make a significant difference. We’re here to guide you, answer your questions, and create a personalized therapy plan for your child.",
+    title: "Book In-Home Pediatric Speech Therapy in The Woodlands",
+    body: "If your child is experiencing speech or language challenges, early intervention can make a significant difference. We are here to guide you, answer your questions, and create a personalized therapy plan for your child.",
+    primaryCta: { label: "Schedule Evaluation", href: "/contact" },
+    secondaryCta: { label: "Contact Us", href: "/contact" },
   },
   faqIntro: {
     title: "Frequently asked questions",
     subtitle: "In-home pediatric speech therapy in The Woodlands",
   },
 };
+
+export const woodlandsServicesPricing = {
+  sectionEyebrow: "Services & pricing",
+  sectionTitle: "Pediatric Speech Therapy Services in The Woodlands, TX",
+  intro:
+    "We provide individualized, evidence based speech therapy services designed to support your child’s communication development at home.",
+  servicesList: [
+    "Speech & Language Screenings (early identification)",
+    "Comprehensive Speech & Language Evaluations",
+    "In Home Individual Therapy Sessions",
+    "Parent Coaching & Support",
+    "IEP Consultation & Meeting Representation",
+  ],
+  evaluationLabel: "Comprehensive Evaluation",
+  evaluationDetail:
+    "Includes assessment, parent interview, and detailed written report.",
+  therapySessionsHeading: "Therapy Sessions",
+  bundlesAreaTitle: "Bundled Options",
+  travel: {
+    title: "Travel Policy",
+    paragraphs: [
+      "We provide in home speech therapy throughout The Woodlands and nearby areas.",
+      "Free travel within a 10-mile radius of: 77380, 77382, 77384, 77385, 77386, 77389, 77354",
+      "$10-$20 travel fee beyond this area",
+      "Services available up to 25 miles",
+      "Virtual sessions are also available if appropriate for your child’s needs.",
+    ],
+  },
+} as const;
