@@ -68,13 +68,17 @@ async function sendViaSmtp(payload: InquiryEmailPayload): Promise<void> {
     auth: { user: user.trim(), pass },
   });
 
-  await transporter.sendMail({
-    from,
-    to,
-    replyTo: payload.email,
-    subject: `Website inquiry — ${payload.name}`,
-    text: inquiryTextBody(payload),
-  });
+  const subject = `Website inquiry - ${payload.name}`;
+  const text = inquiryTextBody(payload);
+  for (const address of to) {
+    await transporter.sendMail({
+      from,
+      to: address,
+      replyTo: payload.email,
+      subject,
+      text,
+    });
+  }
 }
 
 async function sendViaResend(payload: InquiryEmailPayload): Promise<void> {
@@ -84,19 +88,31 @@ async function sendViaResend(payload: InquiryEmailPayload): Promise<void> {
   }
 
   const from = process.env.INQUIRY_FROM_EMAIL?.trim() || RESEND_TRIAL_FROM;
-
+  const recipients = recipientList();
   const resend = new Resend(apiKey);
-  const { error } = await resend.emails.send({
-    from,
-    to: recipientList(),
-    replyTo: payload.email,
-    subject: `Website inquiry — ${payload.name}`,
-    text: inquiryTextBody(payload),
-    html: inquiryHtmlBody(payload),
-  });
+  const subject = `Website inquiry - ${payload.name}`;
+  const text = inquiryTextBody(payload);
+  const html = inquiryHtmlBody(payload);
 
-  if (error) {
-    throw new Error(error.message);
+  /** One send per inbox — Resend’s trial `onboarding@resend.dev` often rejects multiple `to` in a single request. */
+  for (const to of recipients) {
+    const { data, error } = await resend.emails.send({
+      from,
+      to: [to],
+      replyTo: payload.email,
+      subject,
+      text,
+      html,
+    });
+
+    if (error) {
+      const detail =
+        typeof error === "object" && error !== null && "message" in error
+          ? String((error as { message: unknown }).message)
+          : JSON.stringify(error);
+      console.error("[sendViaResend] Resend error", { to, from, detail, data });
+      throw new Error(detail || "Resend returned an error.");
+    }
   }
 }
 

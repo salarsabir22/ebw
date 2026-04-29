@@ -68,10 +68,15 @@ export async function submitInquiry(
     });
   } catch (err) {
     console.error("[submitInquiry]", err);
+    const devHint =
+      process.env.NODE_ENV === "development" && err instanceof Error
+        ? ` ${err.message}`
+        : "";
     return {
       ok: false,
       message:
-        "We couldn’t send your message right now. Please try again in a few minutes, or email us directly.",
+        "We couldn’t send your message right now. Please try again in a few minutes, or email us directly." +
+        devHint,
     };
   }
 
