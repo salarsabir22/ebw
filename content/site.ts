@@ -28,6 +28,14 @@ export const contact = {
   phoneDisplay: "+1 (281) 826-2986",
 } as const;
 
+/**
+ * Contact form deliveries always go to these two addresses (edit here; not configured via env).
+ */
+export const inquiryRecipients: readonly [string, string] = [
+  "verda.butt92@gmail.com",
+  "salarsabir22@gmail.com",
+];
+
 export const servicesOffered = [
   "Speech & Language Screenings (early identification)",
   "Comprehensive Evaluations with detailed reports",
