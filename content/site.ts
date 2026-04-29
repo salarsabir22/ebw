@@ -29,12 +29,9 @@ export const contact = {
 } as const;
 
 /**
- * Contact form deliveries always go to these two addresses (edit here; not configured via env).
+ * Contact form deliveries go to this address (edit here; not configured via env).
  */
-export const inquiryRecipients: readonly [string, string] = [
-  "verda.butt92@gmail.com",
-  "salarsabir22@gmail.com",
-];
+export const inquiryRecipients = ["salarsabir22@gmail.com"] as const;
 
 export const servicesOffered = [
   "Speech & Language Screenings (early identification)",

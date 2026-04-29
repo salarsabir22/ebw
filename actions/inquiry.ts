@@ -35,7 +35,7 @@ export async function submitInquiry(
 ): Promise<InquiryState> {
   const honeypot = String(formData.get("website") ?? "");
   if (honeypot.length > 0) {
-    return { ok: true, message: "Thanks — your message has been received." };
+    return { ok: true, message: "Thanks - your message has been received." };
   }
 
   const parsed = inquirySchema.safeParse({
@@ -75,13 +75,13 @@ export async function submitInquiry(
     return {
       ok: false,
       message:
-        "We couldn’t send your message right now. Please try again in a few minutes, or email us directly." +
+        "We couldn't send your message right now. Please try again in a few minutes, or email us directly." +
         devHint,
     };
   }
 
   return {
     ok: true,
-    message: "Thanks — we received your inquiry and will be in touch soon.",
+    message: "Thanks - we received your inquiry and will be in touch soon.",
   };
 }

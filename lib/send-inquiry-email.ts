@@ -125,7 +125,7 @@ async function sendViaResend(payload: InquiryEmailPayload): Promise<void> {
  * **Resend** — if SMTP is not configured, uses `RESEND_API_KEY`. `INQUIRY_FROM_EMAIL`
  * defaults to Resend’s trial sender `onboarding@resend.dev` when unset (trial limits apply).
  *
- * Recipients: {@link inquiryRecipients} in `content/site.ts` (two hardcoded addresses).
+ * Recipients: {@link inquiryRecipients} in `content/site.ts` (one hardcoded address).
  */
 export async function sendInquiryEmail(payload: InquiryEmailPayload): Promise<void> {
   const useSmtp =
