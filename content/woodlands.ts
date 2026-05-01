@@ -20,9 +20,9 @@ export const woodlandsBundlePricing: readonly ServicesPricingBundle[] = [
 
 export const woodlandsPage: PageConfig = {
   seo: {
-    title: "In Home Pediatric Speech Therapy in The Woodlands, TX | Expression Beyond Words",
+    title: "Best In Home Pediatric Speech Therapist In The Woodlands - EBW",
     description:
-      "Mobile pediatric speech therapy in The Woodlands and nearby Montgomery County. Play-based, in-home sessions, evaluations, and parent coaching with Verda Butt, M.S., CCC-SLP.",
+      "Get expert in home pediatric speech therapy in The Woodlands. Personalized speech sessions for toddlers and kids in the comfort of your home. Book today",
     path: "/in-home-pediatric-speech-therapy-the-woodlands",
   },
   hero: {

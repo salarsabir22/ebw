@@ -4,9 +4,9 @@ import type { PageConfig } from "./types";
 export const homePage: PageConfig = {
   seo: {
     title:
-      "In-Home Pediatric Speech Therapy in Northwest Houston | Expression Beyond Words",
+      "Best Home Speech Therapy Services In Northwest Houston - Verda Butt",
     description:
-      "In-home pediatric speech therapy in Northwest Houston with Verda Butt, M.S., CCC-SLP: play-based sessions, bilingual support (Urdu, Hindi, English), evaluations, and parent coaching—serving Spring, The Woodlands, Tomball, Conroe, and Magnolia.",
+      "In home pediatric speech therapy in Northwest Houston for toddlers to teens. Book an evaluation today and support your child with early intervention services.",
     path: "/",
   },
   hero: {
