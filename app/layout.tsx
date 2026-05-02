@@ -21,6 +21,9 @@ const quicksand = Quicksand({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  alternates: {
+    canonical: "./",
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "32x32" },

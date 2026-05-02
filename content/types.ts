@@ -8,6 +8,9 @@ export type HeroCta =
   | { label: string; href: string }
   | { label: string; tel: true };
 
+/** Plain text or an inline link for the hero “Serving” line. */
+export type HeroServingSegment = string | { label: string; href: string };
+
 export type HeroConfig = {
   eyebrow: string;
   title: string;
@@ -22,6 +25,8 @@ export type HeroConfig = {
   secondaryCta?: HeroCta;
   /** e.g. “Serving: Spring, …” shown under CTAs */
   servingLine?: string;
+  /** When set, rendered instead of `servingLine` (supports inline links). */
+  servingLineSegments?: readonly HeroServingSegment[];
 };
 
 export type FocusCard = {
@@ -47,6 +52,8 @@ export type PageConfig = {
     intro: string;
     bullets: string[];
     woodlandsHref: string;
+    /** Optional link target for the “Spring” area chip (e.g. homepage). */
+    springHref?: string;
   };
   focusCards: FocusCard[];
   about: {

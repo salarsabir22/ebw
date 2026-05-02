@@ -23,7 +23,6 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: woodlandsPage.seo.title,
   description: woodlandsPage.seo.description,
-  alternates: { canonical: woodlandsPage.seo.path },
   openGraph: {
     title: woodlandsPage.seo.title,
     description: woodlandsPage.seo.description,

@@ -20,14 +20,23 @@ export const homePage: PageConfig = {
       "Bilingual speech therapy available in Urdu, Hindi, and English to support multilingual families.",
     primaryCta: { label: "Book a Consultation", href: "/contact" },
     secondaryCta: { label: "Schedule an Evaluation", href: "/contact" },
-    servingLine:
-      "📍 Serving: Spring, The Woodlands, Tomball, Conroe & Magnolia",
+    servingLineSegments: [
+      "📍 Serving: ",
+      { label: "Spring", href: "/in-home-pediatric-speech-therapy-Spring-tx" },
+      ", ",
+      {
+        label: "The Woodlands",
+        href: "/in-home-pediatric-speech-therapy-the-woodlands",
+      },
+      ", Tomball, Conroe & Magnolia",
+    ],
   },
   areas: {
     title: "Serving Northwest Houston families",
     intro: "We bring therapy to the places your child already feels safest.",
     bullets: ["Spring", "The Woodlands", "Tomball", "Conroe", "Magnolia"],
     woodlandsHref: "/in-home-pediatric-speech-therapy-the-woodlands",
+    springHref: "/in-home-pediatric-speech-therapy-Spring-tx",
   },
   focusCards: [
     {

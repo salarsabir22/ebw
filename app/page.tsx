@@ -20,7 +20,6 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: homePage.seo.title,
   description: homePage.seo.description,
-  alternates: { canonical: homePage.seo.path },
   openGraph: {
     title: homePage.seo.title,
     description: homePage.seo.description,

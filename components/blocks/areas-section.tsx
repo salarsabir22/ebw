@@ -16,7 +16,11 @@ export function AreasSection({
       </p>
       <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {areas.bullets.map((place) => {
-          const isWoodlands = place.toLowerCase().includes("woodlands");
+          const lower = place.toLowerCase();
+          const isWoodlands = lower.includes("woodlands");
+          const isSpring = lower === "spring" || lower.startsWith("spring,");
+          const springLink =
+            areas.springHref && isSpring ? areas.springHref : null;
           return (
             <li
               key={place}
@@ -26,7 +30,14 @@ export function AreasSection({
                 className="inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--ebw-sage)]"
                 aria-hidden
               />
-              {isWoodlands && linkWoodlandsPage ? (
+              {springLink ? (
+                <Link
+                  className="font-semibold underline-offset-4 hover:underline"
+                  href={springLink}
+                >
+                  {place}
+                </Link>
+              ) : isWoodlands && linkWoodlandsPage ? (
                 <Link
                   className="font-semibold underline-offset-4 hover:underline"
                   href={areas.woodlandsHref}

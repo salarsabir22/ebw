@@ -103,7 +103,23 @@ export function Hero({
                 </a>
               )}
             </div>
-            {hero.servingLine ? (
+            {hero.servingLineSegments && hero.servingLineSegments.length > 0 ? (
+              <p className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-muted-foreground">
+                {hero.servingLineSegments.map((seg, i) =>
+                  typeof seg === "string" ? (
+                    <span key={i}>{seg}</span>
+                  ) : (
+                    <Link
+                      key={i}
+                      href={seg.href}
+                      className="font-semibold text-primary underline-offset-4 hover:underline"
+                    >
+                      {seg.label}
+                    </Link>
+                  ),
+                )}
+              </p>
+            ) : hero.servingLine ? (
               <p className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-muted-foreground">
                 {hero.servingLine}
               </p>
