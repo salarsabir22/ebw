@@ -16,7 +16,7 @@ export const brand = {
 
 export const site = {
   name: "Expression Beyond Words",
-  url: "https://www.expressionbeyondwords.com",
+  url: "https://expressionbeyondwords.com",
   owner: "Verda Butt",
   credentials:
     "ASHA certified Speech Language Pathologist with a Master’s degree in Communication Sciences and Disorders from Baylor University.",
