@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Plus_Jakarta_Sans, Quicksand } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
 import { site } from "@/content/site";
@@ -68,6 +69,18 @@ export default function RootLayout({
       >
         <JsonLd />
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9WEDJX7H46"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9WEDJX7H46');
+          `}
+        </Script>
       </body>
     </html>
   );
