@@ -8,14 +8,13 @@ export const brand = {
   logoSrc: "/logo.png",
   logoAlt: "Expression Beyond Words PLLC logo",
   lineOfBusiness: "Speech Therapy" as const,
-  taglinePrimary:
-    "Opening a world of language for those with special talents" as const,
+  taglinePrimary: "Making every expression count" as const,
   taglineSecondary:
     "Sometimes, words are not enough to express the emotions you feel" as const,
 } as const;
 
 export const site = {
-  name: "Expression Beyond Words",
+  name: "Expression Beyond Words PLLC",
   url: "https://www.expressionbeyondwords.com",
   owner: "Verda Butt",
   credentials:

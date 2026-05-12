@@ -32,7 +32,7 @@ export const woodlandsPage: PageConfig = {
       "Helping children build strong communication skills through personalized, play based therapy delivered in the comfort of your home, with a focus on early intervention and lasting progress.",
     supportingParagraph:
       "We support toddlers and school aged children with speech, language, fluency, and autism related communication needs.",
-    primaryCta: { label: "Book a Consultation", href: "/contact" },
+    primaryCta: { label: "Book a FREE 15-min consultation", href: "/contact" },
     secondaryCta: { label: "Schedule an Evaluation", href: "/contact" },
     servingLine:
       "📍 Serving: The Woodlands & nearby Montgomery County communities",
