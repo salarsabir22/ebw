@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { brand, contact, site } from "@/content/site";
+import { serviceAreas } from "@/content/locations";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -51,13 +52,19 @@ export function SiteFooter() {
               <Link className="underline-offset-4 hover:underline" href="/">
                 Northwest Houston
               </Link>
-              {" · "}
-              <Link
-                className="underline-offset-4 hover:underline"
-                href="/in-home-pediatric-speech-therapy-the-woodlands"
-              >
-                The Woodlands
-              </Link>
+            </li>
+            <li className="text-[color-mix(in_srgb,var(--ebw-footer-fg)_78%,transparent)]">
+              {serviceAreas.map((area, i) => (
+                <span key={area.href}>
+                  {i > 0 ? " · " : null}
+                  <Link
+                    className="underline-offset-4 hover:underline"
+                    href={area.href}
+                  >
+                    {area.label}
+                  </Link>
+                </span>
+              ))}
             </li>
           </ul>
         </div>

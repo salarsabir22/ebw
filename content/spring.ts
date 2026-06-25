@@ -64,7 +64,14 @@ export const springPage: PageConfig = {
   about: {
     title: "Licensed Pediatric Speech Therapist Serving Spring, TX",
     paragraphs: [
-      "Hi, I'm Verda, an ASHA-certified Speech Language Pathologist with a Master's degree in Communication Sciences and Disorders from Baylor University. I provide in-home pediatric speech therapy in Spring TX, helping children strengthen communication skills through individualized, evidence-based care delivered in their natural environment.",
+      [
+        "Hi, I'm Verda, an ASHA-certified Speech Language Pathologist with a Master's degree in Communication Sciences and Disorders from Baylor University. I provide ",
+        {
+          label: "in-home pediatric speech therapy in Spring TX",
+          href: "/in-home-pediatric-speech-therapy-Spring-tx",
+        },
+        ", helping children strengthen communication skills through individualized, evidence-based care delivered in their natural environment.",
+      ],
     ],
     specialtiesTitle: "I am passionate about supporting children with:",
     specialties: [
@@ -83,7 +90,14 @@ export const springPage: PageConfig = {
   bilingual: {
     title: "Mobile Pediatric Speech Therapy Services in Spring TX",
     paragraphs: [
-      "Finding the right support for your child should feel simple and stress-free. Our mobile pediatric speech therapy services in Spring TX bring professional speech therapy directly to your home, allowing your child to learn and grow in a familiar and comfortable setting.",
+      [
+        "Finding the right support for your child should feel simple and stress-free. Our ",
+        {
+          label: "mobile pediatric speech therapy services in Spring TX",
+          href: "/in-home-pediatric-speech-therapy-Spring-tx",
+        },
+        " bring professional speech therapy directly to your home, allowing your child to learn and grow in a familiar and comfortable setting.",
+      ],
       "By providing therapy in a natural environment, we can focus on real-life communication opportunities that encourage stronger engagement and long-term success.",
       "Whether your child is experiencing speech delays, language difficulties, articulation concerns, or autism-related communication challenges, we create individualized treatment plans tailored to their specific needs.",
     ],
@@ -111,8 +125,14 @@ export const springPage: PageConfig = {
   },
   collaborators: {
     title: "Home-Based Speech Therapy for Children in Spring TX",
-    intro:
-      "Our home based speech therapy for children in Spring TX allows children to practice communication skills in the environment where they feel most comfortable.",
+    intro: [
+      "Our ",
+      {
+        label: "home based speech therapy for children in Spring TX",
+        href: "/in-home-pediatric-speech-therapy-Spring-tx",
+      },
+      " allows children to practice communication skills in the environment where they feel most comfortable.",
+    ],
     listHeading: "This approach supports:",
     list: [
       "Increased participation",
@@ -143,7 +163,19 @@ export const springPage: PageConfig = {
   },
   finalCta: {
     title: "Book Pediatric Speech Therapy in Spring TX",
-    body: "If your child is experiencing speech or language challenges, early support can make a lasting difference. At Expression Beyond Words, we proudly provide mobile pediatric speech therapy services in Spring TX designed to help children build confidence, strengthen communication skills, and reach their full potential. Contact us today to book pediatric speech therapy in Spring TX, schedule a consultation, or arrange a comprehensive speech evaluation.",
+    body: [
+      "If your child is experiencing speech or language challenges, early support can make a lasting difference. At Expression Beyond Words, we proudly provide ",
+      {
+        label: "mobile pediatric speech therapy services in Spring TX",
+        href: "/in-home-pediatric-speech-therapy-Spring-tx",
+      },
+      " designed to help children build confidence, strengthen communication skills, and reach their full potential. Contact us today to ",
+      {
+        label: "book pediatric speech therapy in Spring TX",
+        href: "/contact",
+      },
+      ", schedule a consultation, or arrange a comprehensive speech evaluation.",
+    ],
     primaryCta: { label: "Schedule Evaluation", href: "/contact" },
     secondaryCta: { label: "Contact Us", href: "/contact" },
   },
@@ -187,8 +219,14 @@ export const springServicesPricing = {
 
 export const springEvaluationSection = {
   title: "Pediatric Speech Evaluation in Spring TX",
-  intro:
-    "A professional pediatric speech evaluation in Spring TX is often the first step toward understanding your child's communication strengths and challenges.",
+  intro: [
+    "A professional ",
+    {
+      label: "pediatric speech evaluation in Spring TX",
+      href: "/in-home-pediatric-speech-therapy-Spring-tx",
+    },
+    " is often the first step toward understanding your child's communication strengths and challenges.",
+  ],
   listHeading: "Our evaluations assess:",
   list: [
     "Speech sound production",
@@ -204,8 +242,14 @@ export const springEvaluationSection = {
 
 export const springSpeechDelaySection = {
   title: "Speech Delay Therapy for Toddlers in Spring TX",
-  intro:
-    "Early intervention can make a significant difference in a child's communication development. Our speech delay therapy for toddlers in Spring TX focuses on helping young children build foundational language and communication skills during critical developmental years.",
+  intro: [
+    "Early intervention can make a significant difference in a child's communication development. Our ",
+    {
+      label: "speech delay therapy for toddlers in Spring TX",
+      href: "/in-home-pediatric-speech-therapy-Spring-tx",
+    },
+    " focuses on helping young children build foundational language and communication skills during critical developmental years.",
+  ],
   listHeading: "We help toddlers who may struggle with:",
   list: [
     "Saying words clearly",
@@ -221,8 +265,14 @@ export const springSpeechDelaySection = {
 
 export const springPrivateTherapySection = {
   title: "Private Pediatric Speech Therapy in Spring TX",
-  intro:
-    "Families looking for personalized care often choose our private pediatric speech therapy in Spring TX because of the individualized attention each child receives.",
+  intro: [
+    "Families looking for personalized care often choose our ",
+    {
+      label: "private pediatric speech therapy in Spring TX",
+      href: "/in-home-pediatric-speech-therapy-Spring-tx",
+    },
+    " because of the individualized attention each child receives.",
+  ],
   listHeading: "Private therapy allows us to:",
   list: [
     "Focus on your child's unique needs",

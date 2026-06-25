@@ -6,6 +6,7 @@ import { SiteShell } from "@/components/site-shell";
 import { images } from "@/content/images";
 import { homePage } from "@/content/home";
 import { site } from "@/content/site";
+import { TextBlockContent } from "@/components/text-segments";
 
 const title = "About Verda | Licensed pediatric speech therapist in Northwest Houston";
 const description =
@@ -37,7 +38,9 @@ export default function AboutPage() {
         >
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-[var(--ebw-muted)]">
             {homePage.bilingual.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
+              <p key={i}>
+                <TextBlockContent block={p} />
+              </p>
             ))}
           </div>
         </Section>

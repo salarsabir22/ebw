@@ -50,7 +50,14 @@ export const conroePage: PageConfig = {
     subtitle: "Personalized Support for Every Child",
     paragraphs: [
       "Hi, I'm Verda, an ASHA-certified Speech-Language Pathologist dedicated to helping children find their voice and communicate with confidence.",
-      "As a trusted pediatric speech therapist in Conroe TX, I provide individualized therapy services designed to support each child's unique strengths, challenges, and developmental goals. My therapy approach combines evidence-based techniques with play-based learning to create meaningful and lasting communication progress.",
+      [
+        "As a trusted ",
+        {
+          label: "pediatric speech therapist in Conroe TX",
+          href: "/in-home-pediatric-speech-therapy-conroe-tx",
+        },
+        ", I provide individualized therapy services designed to support each child's unique strengths, challenges, and developmental goals. My therapy approach combines evidence-based techniques with play-based learning to create meaningful and lasting communication progress.",
+      ],
       "I believe that collaboration is essential for success. That's why I work closely with parents, caregivers, educators, and other professionals to ensure children receive consistent support across all environments.",
     ],
     specialtiesTitle: "Areas of Specialization",
@@ -71,7 +78,14 @@ export const conroePage: PageConfig = {
   bilingual: {
     title: "Mobile Pediatric Speech Therapy Services in Conroe TX",
     paragraphs: [
-      "Our mobile pediatric speech therapy services in Conroe TX bring expert care directly to your home, eliminating the need for stressful commutes and busy clinic waiting rooms.",
+      [
+        "Our ",
+        {
+          label: "mobile pediatric speech therapy services in Conroe TX",
+          href: "/in-home-pediatric-speech-therapy-conroe-tx",
+        },
+        " bring expert care directly to your home, eliminating the need for stressful commutes and busy clinic waiting rooms.",
+      ],
       "Children often make better progress when therapy takes place in familiar surroundings. Home-based sessions allow us to incorporate everyday routines and natural interactions into treatment, helping children apply communication skills more effectively in daily life.",
       "By providing therapy where children feel safe and comfortable, we create opportunities for meaningful learning and long-term success.",
     ],
@@ -87,8 +101,14 @@ export const conroePage: PageConfig = {
   },
   collaborators: {
     title: "Home Based Speech Therapy for Children in Conroe TX",
-    intro:
-      "Our home based speech therapy for children in Conroe TX allows therapy to occur in a natural environment where children can comfortably practice communication skills.",
+    intro: [
+      "Our ",
+      {
+        label: "home based speech therapy for children in Conroe TX",
+        href: "/in-home-pediatric-speech-therapy-conroe-tx",
+      },
+      " allows therapy to occur in a natural environment where children can comfortably practice communication skills.",
+    ],
     listHeading: "Home-based therapy supports:",
     list: [
       "Better engagement during sessions",
@@ -119,7 +139,19 @@ export const conroePage: PageConfig = {
   },
   finalCta: {
     title: "Book Pediatric Speech Therapy in Conroe TX",
-    body: "If your child is struggling with speech, language, or communication development, early support can make a lasting difference. Expression Beyond Words proudly provides mobile pediatric speech therapy services in Conroe TX designed to help children build communication skills, confidence, and independence. Contact us today to book pediatric speech therapy in Conroe TX, schedule a consultation, or arrange a comprehensive speech evaluation.",
+    body: [
+      "If your child is struggling with speech, language, or communication development, early support can make a lasting difference. Expression Beyond Words proudly provides ",
+      {
+        label: "mobile pediatric speech therapy services in Conroe TX",
+        href: "/in-home-pediatric-speech-therapy-conroe-tx",
+      },
+      " designed to help children build communication skills, confidence, and independence. Contact us today to ",
+      {
+        label: "book pediatric speech therapy in Conroe TX",
+        href: "/contact",
+      },
+      ", schedule a consultation, or arrange a comprehensive speech evaluation.",
+    ],
     primaryCta: { label: "Schedule Evaluation", href: "/contact" },
     secondaryCta: { label: "Contact Us", href: "/contact" },
   },
@@ -131,8 +163,14 @@ export const conroePage: PageConfig = {
 
 export const conroeInHomeTherapySection = {
   title: "In Home Pediatric Speech Therapy in Conroe TX",
-  intro:
-    "Our in home pediatric speech therapy in Conroe TX offers convenience, flexibility, and personalized support for families seeking high-quality speech services.",
+  intro: [
+    "Our ",
+    {
+      label: "in home pediatric speech therapy in Conroe TX",
+      href: "/in-home-pediatric-speech-therapy-conroe-tx",
+    },
+    " offers convenience, flexibility, and personalized support for families seeking high-quality speech services.",
+  ],
   listHeading: "Benefits of in-home therapy include:",
   list: [
     "Comfortable learning environment",
@@ -148,8 +186,14 @@ export const conroeInHomeTherapySection = {
 
 export const conroePediatricTherapySection = {
   title: "Pediatric Speech Therapy in Conroe TX",
-  intro:
-    "Expression Beyond Words proudly provides comprehensive pediatric speech therapy in Conroe TX for toddlers, preschoolers, and school-aged children.",
+  intro: [
+    "Expression Beyond Words proudly provides comprehensive ",
+    {
+      label: "pediatric speech therapy in Conroe TX",
+      href: "/in-home-pediatric-speech-therapy-conroe-tx",
+    },
+    " for toddlers, preschoolers, and school-aged children.",
+  ],
   listHeading: "Our therapy services address:",
   list: [
     "Articulation and speech sound production",
@@ -165,8 +209,14 @@ export const conroePediatricTherapySection = {
 
 export const conroeKidsTherapySection = {
   title: "Speech Therapy for Kids in Conroe TX",
-  intro:
-    "Our speech therapy for kids in Conroe TX focuses on helping children improve communication through engaging, child-centered therapy experiences.",
+  intro: [
+    "Our ",
+    {
+      label: "speech therapy for kids in Conroe TX",
+      href: "/in-home-pediatric-speech-therapy-conroe-tx",
+    },
+    " focuses on helping children improve communication through engaging, child-centered therapy experiences.",
+  ],
   listHeading:
     "We use play-based activities, interactive learning opportunities, and individualized treatment plans to help children:",
   list: [

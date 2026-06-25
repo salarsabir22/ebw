@@ -18,6 +18,7 @@ import {
   conroeSpeechDelaySection,
 } from "@/content/conroe";
 import { site } from "@/content/site";
+import { TextBlockContent } from "@/components/text-segments";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -47,7 +48,9 @@ export default function ConroeTxPage() {
         >
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-[var(--ebw-muted)]">
             {story.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
+              <p key={i}>
+                <TextBlockContent block={p} />
+              </p>
             ))}
           </div>
         </Section>
@@ -75,7 +78,7 @@ export default function ConroeTxPage() {
         className="bg-muted/50"
       >
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-          {conroePage.finalCta.body}
+          <TextBlockContent block={conroePage.finalCta.body} />
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           {finalPrimary ? (

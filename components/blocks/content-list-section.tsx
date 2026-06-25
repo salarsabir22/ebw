@@ -1,3 +1,5 @@
+import type { TextBlock } from "@/content/types";
+import { TextBlockContent } from "../text-segments";
 import { Section } from "../section";
 
 export function ContentListSection({
@@ -9,16 +11,16 @@ export function ContentListSection({
   className,
 }: {
   title: string;
-  intro: string;
+  intro: TextBlock;
   listHeading: string;
   list: readonly string[];
-  closing: string;
+  closing: TextBlock;
   className?: string;
 }) {
   return (
     <Section title={title} className={className}>
       <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">
-        {intro}
+        <TextBlockContent block={intro} />
       </p>
       <h3 className="mt-8 font-display text-xl font-semibold text-[var(--ebw-ink)]">
         {listHeading}
@@ -38,7 +40,7 @@ export function ContentListSection({
         ))}
       </ul>
       <p className="mt-8 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">
-        {closing}
+        <TextBlockContent block={closing} />
       </p>
     </Section>
   );

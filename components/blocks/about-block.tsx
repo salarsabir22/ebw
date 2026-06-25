@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { PageImage } from "@/content/images";
 import type { PageConfig } from "@/content/types";
+import { TextBlockContent } from "../text-segments";
 import { Section } from "../section";
 
 export function AboutBlock({
@@ -13,7 +14,9 @@ export function AboutBlock({
   const prose = (
     <div className="space-y-4 text-lg leading-relaxed text-[var(--ebw-muted)]">
       {about.paragraphs.map((p, i) => (
-        <p key={i}>{p}</p>
+        <p key={i}>
+          <TextBlockContent block={p} />
+        </p>
       ))}
     </div>
   );
@@ -36,7 +39,9 @@ export function AboutBlock({
       </ul>
       <div className="mt-6 space-y-4 text-[var(--ebw-muted)]">
         {about.closingParagraphs.map((p, i) => (
-          <p key={i}>{p}</p>
+          <p key={i}>
+            <TextBlockContent block={p} />
+          </p>
         ))}
       </div>
     </div>

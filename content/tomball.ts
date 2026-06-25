@@ -48,7 +48,14 @@ export const tomballPage: PageConfig = {
     title: "Meet Your Pediatric Speech Therapist",
     paragraphs: [
       "Hi, I'm Verda, a licensed and ASHA-certified Speech-Language Pathologist dedicated to helping children communicate with confidence.",
-      "As an experienced pediatric speech therapist in Tomball TX, I specialize in creating individualized treatment plans that support each child's unique strengths and goals. My approach combines evidence-based therapy techniques with engaging, child-led activities that make learning enjoyable and effective.",
+      [
+        "As an experienced ",
+        {
+          label: "pediatric speech therapist in Tomball TX",
+          href: "/in-home-pediatric-speech-therapy-tomball-tx",
+        },
+        ", I specialize in creating individualized treatment plans that support each child's unique strengths and goals. My approach combines evidence-based therapy techniques with engaging, child-led activities that make learning enjoyable and effective.",
+      ],
       "I work closely with families, caregivers, and educators to ensure communication skills learned during therapy carry over into everyday life.",
     ],
     specialtiesTitle: "Areas of Expertise",
@@ -69,7 +76,14 @@ export const tomballPage: PageConfig = {
   bilingual: {
     title: "Mobile Pediatric Speech Therapy Services in Tomball TX",
     paragraphs: [
-      "Our mobile pediatric speech therapy services in Tomball TX bring high-quality speech therapy directly to your home, eliminating the stress of commuting to appointments.",
+      [
+        "Our ",
+        {
+          label: "mobile pediatric speech therapy services in Tomball TX",
+          href: "/in-home-pediatric-speech-therapy-tomball-tx",
+        },
+        " bring high-quality speech therapy directly to your home, eliminating the stress of commuting to appointments.",
+      ],
       "Children often learn best in familiar environments where they feel comfortable and secure. By providing therapy in your home, we can incorporate real-life situations, daily routines, and meaningful interactions into each session.",
       "This approach allows children to practice communication skills naturally while helping families become active participants in the therapy process.",
     ],
@@ -87,8 +101,14 @@ export const tomballPage: PageConfig = {
   },
   collaborators: {
     title: "Home Based Speech Therapy for Children in Tomball TX",
-    intro:
-      "Our home based speech therapy for children in Tomball TX allows therapy to occur in the environment where children spend most of their time.",
+    intro: [
+      "Our ",
+      {
+        label: "home based speech therapy for children in Tomball TX",
+        href: "/in-home-pediatric-speech-therapy-tomball-tx",
+      },
+      " allows therapy to occur in the environment where children spend most of their time.",
+    ],
     listHeading: "This natural setting helps children:",
     list: [
       "Generalize communication skills more effectively",
@@ -117,7 +137,19 @@ export const tomballPage: PageConfig = {
   },
   finalCta: {
     title: "Book Pediatric Speech Therapy in Tomball TX",
-    body: "If your child is struggling with speech, language, or communication skills, we're here to help. At Expression Beyond Words, we proudly provide mobile pediatric speech therapy services in Tomball TX designed to support children and families through every stage of communication development. Contact us today to book pediatric speech therapy in Tomball TX, schedule a consultation, or arrange a comprehensive speech evaluation.",
+    body: [
+      "If your child is struggling with speech, language, or communication skills, we're here to help. At Expression Beyond Words, we proudly provide ",
+      {
+        label: "mobile pediatric speech therapy services in Tomball TX",
+        href: "/in-home-pediatric-speech-therapy-tomball-tx",
+      },
+      " designed to support children and families through every stage of communication development. Contact us today to ",
+      {
+        label: "book pediatric speech therapy in Tomball TX",
+        href: "/contact",
+      },
+      ", schedule a consultation, or arrange a comprehensive speech evaluation.",
+    ],
     primaryCta: { label: "Schedule Evaluation", href: "/contact" },
     secondaryCta: { label: "Contact Us", href: "/contact" },
   },
@@ -129,8 +161,14 @@ export const tomballPage: PageConfig = {
 
 export const tomballInHomeTherapySection = {
   title: "In Home Pediatric Speech Therapy in Tomball TX",
-  intro:
-    "Our in home pediatric speech therapy in Tomball TX provides personalized support designed around your child's individual needs and developmental goals.",
+  intro: [
+    "Our ",
+    {
+      label: "in home pediatric speech therapy in Tomball TX",
+      href: "/in-home-pediatric-speech-therapy-tomball-tx",
+    },
+    " provides personalized support designed around your child's individual needs and developmental goals.",
+  ],
   listHeading: "Benefits of in home therapy include:",
   list: [
     "Comfortable and familiar learning environment",
@@ -146,8 +184,14 @@ export const tomballInHomeTherapySection = {
 
 export const tomballPediatricTherapySection = {
   title: "Pediatric Speech Therapy in Tomball TX",
-  intro:
-    "Expression Beyond Words proudly offers comprehensive pediatric speech therapy in Tomball TX for toddlers, preschoolers, and school-aged children.",
+  intro: [
+    "Expression Beyond Words proudly offers comprehensive ",
+    {
+      label: "pediatric speech therapy in Tomball TX",
+      href: "/in-home-pediatric-speech-therapy-tomball-tx",
+    },
+    " for toddlers, preschoolers, and school-aged children.",
+  ],
   listHeading: "Our therapy services are designed to improve:",
   list: [
     "Speech clarity and articulation",
@@ -196,8 +240,14 @@ export const tomballPrivateTherapySection = {
 
 export const tomballEvaluationSection = {
   title: "Pediatric Speech Evaluation in Tomball TX",
-  intro:
-    "A comprehensive pediatric speech evaluation in Tomball TX helps identify your child's communication strengths and areas of need.",
+  intro: [
+    "A comprehensive ",
+    {
+      label: "pediatric speech evaluation in Tomball TX",
+      href: "/in-home-pediatric-speech-therapy-tomball-tx",
+    },
+    " helps identify your child's communication strengths and areas of need.",
+  ],
   listHeading: "During the evaluation process, we assess:",
   list: [
     "Speech sound production",

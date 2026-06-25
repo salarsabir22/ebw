@@ -1,4 +1,5 @@
-import type { PageConfig } from "@/content/types";
+import type { PageConfig, TextBlock } from "@/content/types";
+import { TextBlockContent } from "../text-segments";
 import { Section } from "../section";
 
 export function PlayApproachSection({
@@ -80,7 +81,7 @@ export function CollaboratorsSection({
   return (
     <Section id="mobile" title={collaborators.title}>
       <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">
-        {collaborators.intro}
+        <TextBlockContent block={collaborators.intro} />
       </p>
       {collaborators.listHeading ? (
         <h3 className="mt-8 font-display text-xl font-semibold text-[var(--ebw-ink)]">
@@ -100,19 +101,25 @@ export function CollaboratorsSection({
         ))}
       </ul>
       <p className="mt-8 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">
-        {collaborators.closing}
+        <TextBlockContent block={collaborators.closing} />
       </p>
     </Section>
   );
 }
 
+function hasTextBlock(block?: TextBlock): boolean {
+  if (!block) return false;
+  if (typeof block === "string") return Boolean(block.trim());
+  return block.length > 0;
+}
+
 export function WhyChooseSection({ why }: { why: PageConfig["why"] }) {
-  const hasIntro = Boolean(why.intro?.trim());
+  const hasIntro = hasTextBlock(why.intro);
   return (
     <Section id="why" title={why.title}>
-      {hasIntro ? (
+      {hasIntro && why.intro ? (
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">
-          {why.intro}
+          <TextBlockContent block={why.intro} />
         </p>
       ) : null}
       {why.pointsHeading ? (
@@ -139,7 +146,9 @@ export function WhyChooseSection({ why }: { why: PageConfig["why"] }) {
           </li>
         ))}
       </ul>
-      <p className="mt-8 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">{why.closing}</p>
+      <p className="mt-8 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">
+        <TextBlockContent block={why.closing} />
+      </p>
     </Section>
   );
 }

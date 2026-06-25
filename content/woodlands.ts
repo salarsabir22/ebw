@@ -61,7 +61,14 @@ export const woodlandsPage: PageConfig = {
   about: {
     title: "Licensed Pediatric Speech Therapist Serving The Woodlands, TX",
     paragraphs: [
-      "Hi, I’m Verda, an ASHA certified Speech Language Pathologist with a Master’s degree in Communication Sciences and Disorders from Baylor University. I provide in home pediatric speech therapy in The Woodlands, supporting children with a strong focus on early intervention and functional communication skills.",
+      [
+        "Hi, I'm Verda, an ASHA certified Speech Language Pathologist with a Master's degree in Communication Sciences and Disorders from Baylor University. I provide ",
+        {
+          label: "in home pediatric speech therapy in The Woodlands",
+          href: "/in-home-pediatric-speech-therapy-the-woodlands",
+        },
+        ", supporting children with a strong focus on early intervention and functional communication skills.",
+      ],
     ],
     specialtiesTitle: "I specialize in working with children who experience:",
     specialties: [
@@ -78,7 +85,14 @@ export const woodlandsPage: PageConfig = {
   bilingual: {
     title: "In Home Pediatric Speech Therapy in The Woodlands That Comes to You",
     paragraphs: [
-      "Finding the right support for your child should not be stressful. We provide mobile speech therapy in The Woodlands, bringing professional care directly to your home so your child can learn in a comfortable and familiar environment.",
+      [
+        "Finding the right support for your child should not be stressful. We provide ",
+        {
+          label: "mobile speech therapy in The Woodlands",
+          href: "/in-home-pediatric-speech-therapy-the-woodlands",
+        },
+        ", bringing professional care directly to your home so your child can learn in a comfortable and familiar environment.",
+      ],
       "Early intervention in a natural setting often leads to stronger communication outcomes, improved engagement, and faster progress.",
       "Whether your child has a speech delay, language difficulty, or autism-related communication challenges, we provide structured support designed to meet their individual needs.",
     ],
@@ -127,11 +141,18 @@ export const woodlandsPage: PageConfig = {
       "Specialized support for autism and speech delays",
     ],
     closing:
-      "We don’t just provide therapy we support your child’s communication journey from every angle.",
+      "We don't just provide therapy we support your child's communication journey from every angle.",
   },
   finalCta: {
     title: "Book In-Home Pediatric Speech Therapy in The Woodlands",
-    body: "If your child is experiencing speech or language challenges, early intervention can make a significant difference. We are here to guide you, answer your questions, and create a personalized therapy plan for your child.",
+    body: [
+      "If your child is experiencing speech or language challenges, early intervention can make a significant difference. We are here to guide you, answer your questions, and create a personalized therapy plan for your child. ",
+      {
+        label: "Book in-home pediatric speech therapy in The Woodlands",
+        href: "/contact",
+      },
+      ".",
+    ],
     primaryCta: { label: "Schedule Evaluation", href: "/contact" },
     secondaryCta: { label: "Contact Us", href: "/contact" },
   },
@@ -145,7 +166,7 @@ export const woodlandsServicesPricing = {
   sectionEyebrow: "Services & pricing",
   sectionTitle: "Pediatric Speech Therapy Services in The Woodlands, TX",
   intro:
-    "We provide individualized, evidence based speech therapy services designed to support your child’s communication development at home.",
+    "We provide individualized, evidence based speech therapy services designed to support your child's communication development at home.",
   servicesList: [
     "Speech & Language Screenings (early identification)",
     "Comprehensive Speech & Language Evaluations",
@@ -165,7 +186,7 @@ export const woodlandsServicesPricing = {
       "Free travel within a 10-mile radius of: 77380, 77382, 77384, 77385, 77386, 77389, 77354",
       "$10-$20 travel fee beyond this area",
       "Services available up to 25 miles",
-      "Virtual sessions are also available if appropriate for your child’s needs.",
+      "Virtual sessions are also available if appropriate for your child's needs.",
     ],
   },
 } as const;

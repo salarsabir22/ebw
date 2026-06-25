@@ -8,8 +8,14 @@ export type HeroCta =
   | { label: string; href: string }
   | { label: string; tel: true };
 
+/** Plain text or an inline link within body copy. */
+export type TextSegment = string | { label: string; href: string };
+
+/** A paragraph that may include inline links. */
+export type TextBlock = string | readonly TextSegment[];
+
 /** Plain text or an inline link for the hero “Serving” line. */
-export type HeroServingSegment = string | { label: string; href: string };
+export type HeroServingSegment = TextSegment;
 
 export type HeroConfig = {
   eyebrow: string;
@@ -68,15 +74,15 @@ export type PageConfig = {
     title: string;
     /** Optional subheading shown below the section title (e.g. location pages). */
     subtitle?: string;
-    paragraphs: string[];
+    paragraphs: readonly TextBlock[];
     specialtiesTitle: string;
     specialties: string[];
     /** Paragraphs after the specialties list (e.g. approach + collaboration). */
-    closingParagraphs: string[];
+    closingParagraphs: readonly TextBlock[];
   };
   bilingual: {
     title: string;
-    paragraphs: string[];
+    paragraphs: readonly TextBlock[];
   } | null;
   playBased: {
     title: string;
@@ -94,23 +100,23 @@ export type PageConfig = {
   };
   collaborators: {
     title: string;
-    intro: string;
+    intro: TextBlock;
     /** Shown above the partner list when set (e.g. “We collaborate with:”). */
     listHeading?: string;
     list: string[];
-    closing: string;
+    closing: TextBlock;
   };
   why: {
     title: string;
     /** Optional lead paragraph; omit or leave empty to skip. */
-    intro?: string;
+    intro?: TextBlock;
     pointsHeading?: string;
     points: string[];
-    closing: string;
+    closing: TextBlock;
   };
   finalCta: {
     title: string;
-    body: string;
+    body: TextBlock;
     primaryCta?: { label: string; href: string };
     secondaryCta?: { label: string; href: string };
   };
