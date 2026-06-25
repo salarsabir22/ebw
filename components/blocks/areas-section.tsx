@@ -19,8 +19,18 @@ export function AreasSection({
           const lower = place.toLowerCase();
           const isWoodlands = lower.includes("woodlands");
           const isSpring = lower === "spring" || lower.startsWith("spring,");
+          const isTomball = lower === "tomball" || lower.startsWith("tomball,");
+          const isConroe = lower === "conroe" || lower.startsWith("conroe,");
+          const isMagnolia =
+            lower === "magnolia" || lower.startsWith("magnolia,");
           const springLink =
             areas.springHref && isSpring ? areas.springHref : null;
+          const tomballLink =
+            areas.tomballHref && isTomball ? areas.tomballHref : null;
+          const conroeLink =
+            areas.conroeHref && isConroe ? areas.conroeHref : null;
+          const magnoliaLink =
+            areas.magnoliaHref && isMagnolia ? areas.magnoliaHref : null;
           return (
             <li
               key={place}
@@ -34,6 +44,27 @@ export function AreasSection({
                 <Link
                   className="font-semibold underline-offset-4 hover:underline"
                   href={springLink}
+                >
+                  {place}
+                </Link>
+              ) : tomballLink ? (
+                <Link
+                  className="font-semibold underline-offset-4 hover:underline"
+                  href={tomballLink}
+                >
+                  {place}
+                </Link>
+              ) : conroeLink ? (
+                <Link
+                  className="font-semibold underline-offset-4 hover:underline"
+                  href={conroeLink}
+                >
+                  {place}
+                </Link>
+              ) : magnoliaLink ? (
+                <Link
+                  className="font-semibold underline-offset-4 hover:underline"
+                  href={magnoliaLink}
                 >
                   {place}
                 </Link>

@@ -2,50 +2,46 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AboutBlock } from "@/components/blocks/about-block";
 import { ContentListSection } from "@/components/blocks/content-list-section";
-import {
-  CollaboratorsSection,
-  PlayApproachSection,
-  WhyChooseSection,
-} from "@/components/blocks/therapy-stack";
+import { CollaboratorsSection, WhyChooseSection } from "@/components/blocks/therapy-stack";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
-import { ServicesPricing } from "@/components/services-pricing";
 import { SiteShell } from "@/components/site-shell";
 import { buttonVariants } from "@/components/ui/button";
 import { images } from "@/content/images";
 import {
-  springBundlePricing,
-  springEvaluationSection,
-  springPage,
-  springPrivateTherapySection,
-  springServicesPricing,
-  springSpeechDelaySection,
-} from "@/content/spring";
+  conroeEvaluationSection,
+  conroeInHomeTherapySection,
+  conroeKidsTherapySection,
+  conroePage,
+  conroePediatricTherapySection,
+  conroePrivateTherapySection,
+  conroeSpeechDelaySection,
+} from "@/content/conroe";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: springPage.seo.title,
-  description: springPage.seo.description,
+  title: conroePage.seo.title,
+  description: conroePage.seo.description,
   openGraph: {
-    title: springPage.seo.title,
-    description: springPage.seo.description,
-    url: `${site.url}${springPage.seo.path}`,
+    title: conroePage.seo.title,
+    description: conroePage.seo.description,
+    url: `${site.url}${conroePage.seo.path}`,
   },
 };
 
-export default function SpringTxPage() {
-  const story = springPage.bilingual;
-  const finalPrimary = springPage.finalCta.primaryCta;
-  const finalSecondary = springPage.finalCta.secondaryCta;
+export default function ConroeTxPage() {
+  const story = conroePage.bilingual;
+  const finalPrimary = conroePage.finalCta.primaryCta;
+  const finalSecondary = conroePage.finalCta.secondaryCta;
 
   return (
     <SiteShell>
-      <Hero hero={springPage.hero} image={images.siteBanner} />
-      <AboutBlock about={springPage.about} image={images.siteSessionA} />
+      <Hero hero={conroePage.hero} image={images.siteBanner} />
+      <AboutBlock about={conroePage.about} image={images.siteSessionA} />
       {story ? (
         <Section
-          eyebrow="Spring, TX"
+          eyebrow="Conroe, TX"
           title={story.title}
           className="bg-[var(--surface-container-low)]"
         >
@@ -56,38 +52,30 @@ export default function SpringTxPage() {
           </div>
         </Section>
       ) : null}
-      <ServicesPricing
-        sectionId="spring-services"
-        eyebrow={springServicesPricing.sectionEyebrow}
-        title={springServicesPricing.sectionTitle}
-        intro={springServicesPricing.intro}
-        servicesList={springServicesPricing.servicesList}
-        evaluationLabel={springServicesPricing.evaluationLabel}
-        evaluationDetail={springServicesPricing.evaluationDetail}
-        therapySessionsHeading={springServicesPricing.therapySessionsHeading}
-        bundles={springBundlePricing}
-        bundlesAreaTitle={springServicesPricing.bundlesAreaTitle}
-        travelCustom={springServicesPricing.travel}
-      />
+      <ContentListSection {...conroeInHomeTherapySection} />
       <ContentListSection
-        {...springEvaluationSection}
+        {...conroePediatricTherapySection}
         className="bg-[var(--surface-container-low)]"
       />
-      <ContentListSection {...springSpeechDelaySection} />
-      <PlayApproachSection playBased={springPage.playBased} showOutro={false} />
+      <ContentListSection {...conroeKidsTherapySection} />
       <ContentListSection
-        {...springPrivateTherapySection}
+        {...conroeSpeechDelaySection}
         className="bg-[var(--surface-container-low)]"
       />
-      <CollaboratorsSection collaborators={springPage.collaborators} />
-      <WhyChooseSection why={springPage.why} />
+      <CollaboratorsSection collaborators={conroePage.collaborators} />
+      <ContentListSection {...conroePrivateTherapySection} />
+      <ContentListSection
+        {...conroeEvaluationSection}
+        className="bg-[var(--surface-container-low)]"
+      />
+      <WhyChooseSection why={conroePage.why} />
       <Section
         eyebrow="Get started"
-        title={springPage.finalCta.title}
+        title={conroePage.finalCta.title}
         className="bg-muted/50"
       >
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-          {springPage.finalCta.body}
+          {conroePage.finalCta.body}
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           {finalPrimary ? (

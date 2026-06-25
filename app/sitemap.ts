@@ -11,6 +11,9 @@ const paths = [
   "/contact",
   "/in-home-pediatric-speech-therapy-the-woodlands",
   "/in-home-pediatric-speech-therapy-Spring-tx",
+  "/in-home-pediatric-speech-therapy-tomball-tx",
+  "/in-home-pediatric-speech-therapy-conroe-tx",
+  "/in-home-pediatric-speech-therapy-magnolia-tx",
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -23,7 +26,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority:
       path === "/"
         ? 1
-        : path.includes("woodlands") || path.includes("Spring-tx")
+        : path.includes("woodlands") ||
+            path.includes("Spring-tx") ||
+            path.includes("tomball-tx") ||
+            path.includes("conroe-tx") ||
+            path.includes("magnolia-tx")
           ? 0.85
           : 0.75,
   }));

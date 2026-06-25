@@ -28,7 +28,21 @@ export const homePage: PageConfig = {
         label: "The Woodlands",
         href: "/in-home-pediatric-speech-therapy-the-woodlands",
       },
-      ", Tomball, Conroe & Magnolia",
+      ", ",
+      {
+        label: "Tomball",
+        href: "/in-home-pediatric-speech-therapy-tomball-tx",
+      },
+      ", ",
+      {
+        label: "Conroe",
+        href: "/in-home-pediatric-speech-therapy-conroe-tx",
+      },
+      " & ",
+      {
+        label: "Magnolia",
+        href: "/in-home-pediatric-speech-therapy-magnolia-tx",
+      },
     ],
   },
   areas: {
@@ -37,6 +51,9 @@ export const homePage: PageConfig = {
     bullets: ["Spring", "The Woodlands", "Tomball", "Conroe", "Magnolia"],
     woodlandsHref: "/in-home-pediatric-speech-therapy-the-woodlands",
     springHref: "/in-home-pediatric-speech-therapy-Spring-tx",
+    tomballHref: "/in-home-pediatric-speech-therapy-tomball-tx",
+    conroeHref: "/in-home-pediatric-speech-therapy-conroe-tx",
+    magnoliaHref: "/in-home-pediatric-speech-therapy-magnolia-tx",
   },
   focusCards: [
     {

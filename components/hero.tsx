@@ -97,7 +97,7 @@ export function Hero({
                 <Link href={secondaryCta.href} className={secondaryBtn}>
                   {secondaryCta.label}
                 </Link>
-              ) : (
+              ) : hero.hideSecondaryCta ? null : (
                 <a href={`tel:${contact.phoneE164}`} className={secondaryBtn}>
                   Call {contact.phoneDisplay}
                 </a>

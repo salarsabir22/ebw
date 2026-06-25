@@ -2,50 +2,46 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AboutBlock } from "@/components/blocks/about-block";
 import { ContentListSection } from "@/components/blocks/content-list-section";
-import {
-  CollaboratorsSection,
-  PlayApproachSection,
-  WhyChooseSection,
-} from "@/components/blocks/therapy-stack";
+import { CollaboratorsSection, WhyChooseSection } from "@/components/blocks/therapy-stack";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
-import { ServicesPricing } from "@/components/services-pricing";
 import { SiteShell } from "@/components/site-shell";
 import { buttonVariants } from "@/components/ui/button";
 import { images } from "@/content/images";
 import {
-  springBundlePricing,
-  springEvaluationSection,
-  springPage,
-  springPrivateTherapySection,
-  springServicesPricing,
-  springSpeechDelaySection,
-} from "@/content/spring";
+  magnoliaEvaluationSection,
+  magnoliaInHomeTherapySection,
+  magnoliaKidsTherapySection,
+  magnoliaPage,
+  magnoliaPediatricTherapySection,
+  magnoliaPrivateTherapySection,
+  magnoliaSpeechDelaySection,
+} from "@/content/magnolia";
 import { site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: springPage.seo.title,
-  description: springPage.seo.description,
+  title: magnoliaPage.seo.title,
+  description: magnoliaPage.seo.description,
   openGraph: {
-    title: springPage.seo.title,
-    description: springPage.seo.description,
-    url: `${site.url}${springPage.seo.path}`,
+    title: magnoliaPage.seo.title,
+    description: magnoliaPage.seo.description,
+    url: `${site.url}${magnoliaPage.seo.path}`,
   },
 };
 
-export default function SpringTxPage() {
-  const story = springPage.bilingual;
-  const finalPrimary = springPage.finalCta.primaryCta;
-  const finalSecondary = springPage.finalCta.secondaryCta;
+export default function MagnoliaTxPage() {
+  const story = magnoliaPage.bilingual;
+  const finalPrimary = magnoliaPage.finalCta.primaryCta;
+  const finalSecondary = magnoliaPage.finalCta.secondaryCta;
 
   return (
     <SiteShell>
-      <Hero hero={springPage.hero} image={images.siteBanner} />
-      <AboutBlock about={springPage.about} image={images.siteSessionA} />
+      <Hero hero={magnoliaPage.hero} image={images.siteBanner} />
+      <AboutBlock about={magnoliaPage.about} image={images.siteSessionA} />
       {story ? (
         <Section
-          eyebrow="Spring, TX"
+          eyebrow="Magnolia, TX"
           title={story.title}
           className="bg-[var(--surface-container-low)]"
         >
@@ -56,38 +52,30 @@ export default function SpringTxPage() {
           </div>
         </Section>
       ) : null}
-      <ServicesPricing
-        sectionId="spring-services"
-        eyebrow={springServicesPricing.sectionEyebrow}
-        title={springServicesPricing.sectionTitle}
-        intro={springServicesPricing.intro}
-        servicesList={springServicesPricing.servicesList}
-        evaluationLabel={springServicesPricing.evaluationLabel}
-        evaluationDetail={springServicesPricing.evaluationDetail}
-        therapySessionsHeading={springServicesPricing.therapySessionsHeading}
-        bundles={springBundlePricing}
-        bundlesAreaTitle={springServicesPricing.bundlesAreaTitle}
-        travelCustom={springServicesPricing.travel}
-      />
+      <ContentListSection {...magnoliaInHomeTherapySection} />
       <ContentListSection
-        {...springEvaluationSection}
+        {...magnoliaPediatricTherapySection}
         className="bg-[var(--surface-container-low)]"
       />
-      <ContentListSection {...springSpeechDelaySection} />
-      <PlayApproachSection playBased={springPage.playBased} showOutro={false} />
+      <ContentListSection {...magnoliaKidsTherapySection} />
       <ContentListSection
-        {...springPrivateTherapySection}
+        {...magnoliaSpeechDelaySection}
         className="bg-[var(--surface-container-low)]"
       />
-      <CollaboratorsSection collaborators={springPage.collaborators} />
-      <WhyChooseSection why={springPage.why} />
+      <CollaboratorsSection collaborators={magnoliaPage.collaborators} />
+      <ContentListSection {...magnoliaPrivateTherapySection} />
+      <ContentListSection
+        {...magnoliaEvaluationSection}
+        className="bg-[var(--surface-container-low)]"
+      />
+      <WhyChooseSection why={magnoliaPage.why} />
       <Section
         eyebrow="Get started"
-        title={springPage.finalCta.title}
+        title={magnoliaPage.finalCta.title}
         className="bg-muted/50"
       >
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-          {springPage.finalCta.body}
+          {magnoliaPage.finalCta.body}
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           {finalPrimary ? (

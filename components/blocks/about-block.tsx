@@ -44,8 +44,13 @@ export function AboutBlock({
 
   return (
     <Section id="about" title={about.title}>
+      {about.subtitle ? (
+        <p className="mt-3 font-display text-xl font-semibold text-[var(--ebw-ink)]">
+          {about.subtitle}
+        </p>
+      ) : null}
       {image ? (
-        <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-start">
+        <div className={`grid gap-10 lg:grid-cols-2 lg:items-start ${about.subtitle ? "mt-8" : "mt-10"}`}>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)] lg:order-2">
             <Image
               src={image.src}

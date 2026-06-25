@@ -23,6 +23,8 @@ export type HeroConfig = {
   bilingualLine?: string;
   primaryCta?: HeroCta;
   secondaryCta?: HeroCta;
+  /** When true, omit the default call-to-action button if no secondary CTA is set. */
+  hideSecondaryCta?: boolean;
   /** e.g. “Serving: Spring, …” shown under CTAs */
   servingLine?: string;
   /** When set, rendered instead of `servingLine` (supports inline links). */
@@ -54,10 +56,18 @@ export type PageConfig = {
     woodlandsHref: string;
     /** Optional link target for the “Spring” area chip (e.g. homepage). */
     springHref?: string;
+    /** Optional link target for the “Tomball” area chip (e.g. homepage). */
+    tomballHref?: string;
+    /** Optional link target for the “Conroe” area chip (e.g. homepage). */
+    conroeHref?: string;
+    /** Optional link target for the “Magnolia” area chip (e.g. homepage). */
+    magnoliaHref?: string;
   };
   focusCards: FocusCard[];
   about: {
     title: string;
+    /** Optional subheading shown below the section title (e.g. location pages). */
+    subtitle?: string;
     paragraphs: string[];
     specialtiesTitle: string;
     specialties: string[];
