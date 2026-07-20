@@ -9,6 +9,13 @@ import {
 } from "@/components/ui/accordion";
 import { Section } from "./section";
 
+
+
+
+
+
+
+
 export function FaqList({
   introTitle,
   introSubtitle,
