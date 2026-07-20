@@ -6,6 +6,7 @@ import { Section } from "@/components/section";
 import { SiteShell } from "@/components/site-shell";
 import { images } from "@/content/images";
 import { site } from "@/content/site";
+import { cn } from "@/lib/utils";
 
 const title = "Contact | Book pediatric speech therapy in Northwest Houston";
 const description =
@@ -34,7 +35,12 @@ export default function ContactPage() {
               with next steps for scheduling a consultation or evaluation.
             </p>
           </div>
-          <div className="relative aspect-[5/4] overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)]">
+          <div
+            className={cn(
+              "relative overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)]",
+              images.contactSupport.aspect ?? "aspect-[5/4]",
+            )}
+          >
             <Image
               src={images.contactSupport.src}
               alt={images.contactSupport.alt}
@@ -42,6 +48,9 @@ export default function ContactPage() {
               priority
               sizes="(max-width:1024px) 100vw, 50vw"
               className="object-cover"
+              style={{
+                objectPosition: images.contactSupport.objectPosition ?? "center",
+              }}
             />
           </div>
         </div>

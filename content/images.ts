@@ -10,44 +10,74 @@ const zySessionInHome = `${zy}/2149110208-nT8YdFCxY4Fhg8rW.jpg`;
 export type PageImage = {
   src: string;
   alt: string;
+  /** Tailwind aspect class; default landscape 4/3 in Hero */
+  aspect?: "aspect-[4/3]" | "aspect-[3/4]" | "aspect-[4/5]" | "aspect-[5/4]" | "aspect-square";
+  /** CSS object-position so portrait subjects aren’t clipped */
+  objectPosition?: string;
 };
 
 export const images = {
-  /** Home hero — real in-home pediatric speech therapy context (EBW site asset) */
+  /** Home hero — play-based therapy materials and flashcards */
   homeHero: {
-    src: zySessionInHome,
-    alt: "In-home pediatric speech therapy session focused on communication and connection",
+    src: "/images/home-hero.png",
+    alt: "Play-based pediatric speech therapy materials, flashcards, and toys arranged on the floor",
+    aspect: "aspect-[4/3]",
+    objectPosition: "center",
   } satisfies PageImage,
-  /** Services page — family connection (Unsplash) */
+  /** Services page hero */
   servicesHero: {
-    src: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1600&q=82",
-    alt: "Parent and child reading together on the floor at home",
+    src: "/images/services-hero.png",
+    alt: "Verda with play-based therapy toys, supporting pediatric speech and language care",
+    aspect: "aspect-[3/4]",
+    objectPosition: "center 62%",
   } satisfies PageImage,
-  /** Therapy / approach — play-based learning (Unsplash) */
+  /** Therapy / approach page hero */
   therapyPlay: {
-    src: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1600&q=82",
-    alt: "Children playing together with blocks and smiles",
+    src: "/images/therapy-hero.png",
+    alt: "Verda with play-based therapy toys, reflecting a joyful, child-centered approach",
+    aspect: "aspect-[3/4]",
+    objectPosition: "center 62%",
   } satisfies PageImage,
-  /** Contact / reassurance (Unsplash) */
+  /** Contact page */
   contactSupport: {
-    src: "https://images.unsplash.com/photo-1476703993599-0035a21b17a9?auto=format&fit=crop&w=1400&q=82",
-    alt: "Adult and child sitting together in a supportive moment",
+    src: "/images/contact-hero.png",
+    alt: "Verda holding an Expression Beyond Words business card",
+    aspect: "aspect-[4/5]",
+    objectPosition: "center 35%",
   } satisfies PageImage,
   /** From current EBW site — in-home session context */
   siteSessionA: {
     src: zySessionInHome,
     alt: "In-home pediatric speech therapy session in a comfortable setting",
   } satisfies PageImage,
+  /** About page hero — professional portrait */
+  aboutHero: {
+    src: "/images/about-hero.png",
+    alt: "Verda Butt, M.S., CCC-SLP, licensed pediatric speech-language pathologist",
+    aspect: "aspect-[3/4]",
+    objectPosition: "center 22%",
+  } satisfies PageImage,
   siteSessionB: {
-    src: `${zy}/2149110223-05ko74ZY6cuBKAsT.jpg`,
-    alt: "Therapist and family focused on communication during a home visit",
+    src: "/images/about-portrait.png",
+    alt: "Verda demonstrating speech sounds with a flashcard during pediatric therapy",
+    aspect: "aspect-[3/4]",
+    objectPosition: "center 30%",
   } satisfies PageImage,
   siteBanner: {
     src: `${zy}/2148452158-XKXdOvauhqfqcDcy.jpg`,
     alt: "Expression Beyond Words — welcoming care environment",
   } satisfies PageImage,
+  /** Pricing page hero — business card with play materials */
+  pricingHero: {
+    src: "/images/pricing-hero.png",
+    alt: "Expression Beyond Words business card with pediatric therapy play materials",
+    aspect: "aspect-[4/3]",
+    objectPosition: "center",
+  } satisfies PageImage,
   siteVertical: {
-    src: `${zy}/2148026250-FBL4HiqZbQqoSMR3.jpg`,
-    alt: "Pediatric speech therapy materials and supportive session",
+    src: "/images/services-care.png",
+    alt: "Verda with flashcards and play materials used in pediatric speech therapy",
+    aspect: "aspect-[3/4]",
+    objectPosition: "center 55%",
   } satisfies PageImage,
 } as const;

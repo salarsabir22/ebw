@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { PageImage } from "@/content/images";
 import type { PageConfig } from "@/content/types";
+import { cn } from "@/lib/utils";
 import { TextBlockContent } from "../text-segments";
 import { Section } from "../section";
 
@@ -56,13 +57,21 @@ export function AboutBlock({
       ) : null}
       {image ? (
         <div className={`grid gap-10 lg:grid-cols-2 lg:items-start ${about.subtitle ? "mt-8" : "mt-10"}`}>
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)] lg:order-2">
+          <div
+            className={cn(
+              "relative w-full overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)] lg:order-2 lg:max-h-[36rem]",
+              image.aspect ?? "aspect-[3/4]",
+            )}
+          >
             <Image
               src={image.src}
               alt={image.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
               className="object-cover"
+              style={{
+                objectPosition: image.objectPosition ?? "center 30%",
+              }}
             />
           </div>
           <div className="lg:order-1">

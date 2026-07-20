@@ -48,13 +48,21 @@ export default function ServicesPage() {
               </li>
             ))}
           </ul>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)]">
+          <div
+            className={cn(
+              "relative max-h-[36rem] overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)]",
+              images.siteVertical.aspect ?? "aspect-[3/4]",
+            )}
+          >
             <Image
               src={images.siteVertical.src}
               alt={images.siteVertical.alt}
               fill
               sizes="(max-width:1024px) 100vw, 50vw"
               className="object-cover"
+              style={{
+                objectPosition: images.siteVertical.objectPosition ?? "center",
+              }}
             />
           </div>
         </div>

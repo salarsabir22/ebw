@@ -28,7 +28,7 @@ const aboutHero = {
 export default function AboutPage() {
   return (
     <SiteShell>
-      <Hero hero={aboutHero} image={images.siteSessionA} />
+      <Hero hero={aboutHero} image={images.aboutHero} />
       <AboutBlock about={homePage.about} image={images.siteSessionB} />
       {homePage.bilingual ? (
         <Section

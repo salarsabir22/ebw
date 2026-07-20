@@ -126,7 +126,12 @@ export function Hero({
             ) : null}
           </div>
           {image ? (
-            <div className="relative mx-auto aspect-[4/3] w-full max-w-xl overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)] lg:max-w-none">
+            <div
+              className={cn(
+                "relative mx-auto w-full max-w-xl overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)] lg:max-h-[36rem] lg:max-w-none",
+                image.aspect ?? "aspect-[4/3]",
+              )}
+            >
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -134,6 +139,9 @@ export function Hero({
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
+                style={{
+                  objectPosition: image.objectPosition ?? "center",
+                }}
               />
             </div>
           ) : null}

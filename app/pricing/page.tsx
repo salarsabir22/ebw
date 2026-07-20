@@ -25,7 +25,7 @@ const hero = {
 export default function PricingPage() {
   return (
     <SiteShell>
-      <Hero hero={hero} image={images.siteBanner} primaryCtaHref="/contact" />
+      <Hero hero={hero} image={images.pricingHero} primaryCtaHref="/contact" />
       <ServicesPricing sectionId="pricing" />
     </SiteShell>
   );
