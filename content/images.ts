@@ -58,10 +58,10 @@ export const images = {
     objectPosition: "center 22%",
   } satisfies PageImage,
   siteSessionB: {
-    src: "/images/about-portrait.png",
-    alt: "Verda demonstrating speech sounds with a flashcard during pediatric therapy",
+    src: "/images/home-about.png",
+    alt: "Verda, ASHA-certified speech-language pathologist, with play-based therapy toys",
     aspect: "aspect-[3/4]",
-    objectPosition: "center 30%",
+    objectPosition: "center 58%",
   } satisfies PageImage,
   siteBanner: {
     src: `${zy}/2148452158-XKXdOvauhqfqcDcy.jpg`,

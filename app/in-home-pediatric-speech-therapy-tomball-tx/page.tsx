@@ -38,8 +38,8 @@ export default function TomballTxPage() {
 
   return (
     <SiteShell>
-      <Hero hero={tomballPage.hero} image={images.siteBanner} />
-      <AboutBlock about={tomballPage.about} image={images.siteSessionA} />
+      <Hero hero={tomballPage.hero} image={images.servicesHero} />
+      <AboutBlock about={tomballPage.about} image={images.siteVertical} />
       {story ? (
         <Section
           eyebrow="Tomball, TX"

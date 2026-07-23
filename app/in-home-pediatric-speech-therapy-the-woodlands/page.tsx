@@ -38,8 +38,8 @@ export default function WoodlandsPage() {
 
   return (
     <SiteShell>
-      <Hero hero={woodlandsPage.hero} image={images.siteBanner} />
-      <AboutBlock about={woodlandsPage.about} image={images.siteSessionA} />
+      <Hero hero={woodlandsPage.hero} image={images.contactSupport} />
+      <AboutBlock about={woodlandsPage.about} image={images.servicesHero} />
       {story ? (
         <Section
           eyebrow="The Woodlands"

@@ -38,8 +38,8 @@ export default function ConroeTxPage() {
 
   return (
     <SiteShell>
-      <Hero hero={conroePage.hero} image={images.siteBanner} />
-      <AboutBlock about={conroePage.about} image={images.siteSessionA} />
+      <Hero hero={conroePage.hero} image={images.aboutHero} />
+      <AboutBlock about={conroePage.about} image={images.homeHero} />
       {story ? (
         <Section
           eyebrow="Conroe, TX"

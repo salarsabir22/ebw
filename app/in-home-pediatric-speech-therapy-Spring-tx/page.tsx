@@ -42,8 +42,8 @@ export default function SpringTxPage() {
 
   return (
     <SiteShell>
-      <Hero hero={springPage.hero} image={images.siteBanner} />
-      <AboutBlock about={springPage.about} image={images.siteSessionA} />
+      <Hero hero={springPage.hero} image={images.homeHero} />
+      <AboutBlock about={springPage.about} image={images.siteSessionB} />
       {story ? (
         <Section
           eyebrow="Spring, TX"

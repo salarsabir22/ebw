@@ -38,8 +38,8 @@ export default function MagnoliaTxPage() {
 
   return (
     <SiteShell>
-      <Hero hero={magnoliaPage.hero} image={images.siteBanner} />
-      <AboutBlock about={magnoliaPage.about} image={images.siteSessionA} />
+      <Hero hero={magnoliaPage.hero} image={images.therapyPlay} />
+      <AboutBlock about={magnoliaPage.about} image={images.pricingHero} />
       {story ? (
         <Section
           eyebrow="Magnolia, TX"
