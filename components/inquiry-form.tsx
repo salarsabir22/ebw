@@ -22,17 +22,19 @@ export function InquiryForm({ pagePath }: { pagePath: string }) {
       className="relative rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] sm:p-8"
     >
       <input type="hidden" name="pagePath" value={pagePath} />
+      {/* Honeypot: do not name this "website" — browsers autofill that and skip the real send. */}
       <div
-        className="absolute -left-[9999px] top-auto h-0 w-0 overflow-hidden"
+        className="pointer-events-none absolute -left-[9999px] top-auto h-0 w-0 overflow-hidden opacity-0"
         aria-hidden
       >
-        <label htmlFor="website">Company</label>
+        <label htmlFor="ebw_hp_fax">Fax</label>
         <input
           tabIndex={-1}
           autoComplete="off"
-          id="website"
-          name="website"
+          id="ebw_hp_fax"
+          name="ebw_hp_fax"
           type="text"
+          defaultValue=""
         />
       </div>
       <div className="grid gap-4 sm:grid-cols-2">

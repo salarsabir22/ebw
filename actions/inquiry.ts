@@ -29,8 +29,9 @@ export async function submitInquiry(
   _prevState: InquiryState,
   formData: FormData,
 ): Promise<InquiryState> {
-  const honeypot = String(formData.get("website") ?? "");
+  const honeypot = String(formData.get("ebw_hp_fax") ?? "");
   if (honeypot.length > 0) {
+    console.warn("[submitInquiry] honeypot tripped — email not sent");
     return { ok: true, message: "Thanks - your message has been received." };
   }
 
