@@ -11,6 +11,7 @@ import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
 import { ServicesPricing } from "@/components/services-pricing";
 import { SiteShell } from "@/components/site-shell";
+import { TrustIndexReviews } from "@/components/trustindex-reviews";
 import { buttonVariants } from "@/components/ui/button";
 import { images } from "@/content/images";
 import { homePage } from "@/content/home";
@@ -35,6 +36,7 @@ export default function Home() {
   return (
     <SiteShell>
       <Hero hero={homePage.hero} image={images.homeHero} />
+      <TrustIndexReviews />
       <AboutBlock about={homePage.about} image={images.siteSessionB} />
       {homePage.bilingual ? (
         <Section
