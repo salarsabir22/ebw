@@ -29,8 +29,9 @@ export const contact = {
 
 /**
  * Contact form deliveries go to this address (edit here; not configured via env).
+ * Must match the Resend account email until expressionbeyondwords.com is verified.
  */
-export const inquiryRecipients = ["verda.butt92@gmail.com"] as const;
+export const inquiryRecipients = ["info@expressionbeyondwords.com"] as const;
 
 export const servicesOffered = [
   "Speech & Language Screenings (early identification)",
