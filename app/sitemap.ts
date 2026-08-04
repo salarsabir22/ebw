@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "@/content/blogs";
 import { site } from "@/content/site";
 
 const paths = [
@@ -6,15 +7,17 @@ const paths = [
   "/about",
   "/services",
   "/pricing",
-  "/therapy",
+  // "/therapy",
   "/faq",
+  "/blogs",
   "/contact",
   "/in-home-pediatric-speech-therapy-the-woodlands",
   "/in-home-pediatric-speech-therapy-Spring-tx",
   "/in-home-pediatric-speech-therapy-tomball-tx",
   "/in-home-pediatric-speech-therapy-conroe-tx",
   "/in-home-pediatric-speech-therapy-magnolia-tx",
-] as const;
+  ...blogPosts.map((post) => `/blogs/${post.slug}`),
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -32,6 +35,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
             path.includes("conroe-tx") ||
             path.includes("magnolia-tx")
           ? 0.85
-          : 0.75,
+          : path.startsWith("/blogs/")
+            ? 0.7
+            : 0.75,
   }));
 }

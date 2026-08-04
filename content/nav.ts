@@ -4,7 +4,8 @@ export const mainNav = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/therapy", label: "Therapy" },
+  // { href: "/therapy", label: "Therapy" },
   { href: "/faq", label: "FAQ" },
+  { href: "/blogs", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ] as const;

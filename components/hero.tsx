@@ -22,11 +22,11 @@ export function Hero({
 }) {
   const primaryBtn = cn(
     buttonVariants({ variant: "default", size: "lg" }),
-    "min-h-11 px-6 text-base shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft-strong)]",
+    "h-auto min-h-11 w-fit max-w-full shrink whitespace-normal px-6 py-2.5 text-center text-base leading-snug shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft-strong)]",
   );
   const secondaryBtn = cn(
     buttonVariants({ variant: "outline", size: "lg" }),
-    "min-h-11 border-primary px-6 text-base text-primary shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:bg-muted",
+    "h-auto min-h-11 w-fit max-w-full shrink whitespace-normal border-primary px-6 py-2.5 text-center text-base leading-snug text-primary shadow-[var(--shadow-soft)] hover:-translate-y-0.5 hover:bg-muted",
   );
 
   const primaryCta = hero.primaryCta;
@@ -50,7 +50,7 @@ export function Hero({
               : "max-w-3xl"
           }
         >
-          <div>
+          <div className="min-w-0">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">
               {hero.eyebrow}
             </p>
@@ -75,7 +75,7 @@ export function Hero({
                 {hero.brandQuote}
               </p>
             ) : null}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-8 flex min-w-0 flex-col gap-3">
               {primaryCta && !isTelCta(primaryCta) ? (
                 <Link href={primaryCta.href} className={primaryBtn}>
                   {primaryCta.label}
@@ -128,7 +128,7 @@ export function Hero({
           {image ? (
             <div
               className={cn(
-                "relative mx-auto w-full max-w-xl overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)] lg:max-h-[36rem] lg:max-w-none",
+                "relative mx-auto w-full min-w-0 max-w-xl overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)] lg:max-h-[36rem] lg:max-w-none",
                 image.aspect ?? "aspect-[4/3]",
               )}
             >

@@ -26,7 +26,7 @@ export default function PricingPage() {
   return (
     <SiteShell>
       <Hero hero={hero} image={images.pricingHero} primaryCtaHref="/contact" />
-      <ServicesPricing sectionId="pricing" />
+      <ServicesPricing sectionId="pricing" eyebrow="" title="" intro="" />
     </SiteShell>
   );
 }

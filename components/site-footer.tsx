@@ -88,14 +88,19 @@ export function SiteFooter() {
                 Pricing
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link className="underline-offset-4 hover:underline" href="/therapy">
                 Therapy
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link className="underline-offset-4 hover:underline" href="/faq">
                 FAQ
+              </Link>
+            </li>
+            <li>
+              <Link className="underline-offset-4 hover:underline" href="/blogs">
+                Blog
               </Link>
             </li>
             <li>

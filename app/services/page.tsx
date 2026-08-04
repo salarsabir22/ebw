@@ -11,7 +11,7 @@ import { homePage } from "@/content/home";
 import { servicesOffered, site } from "@/content/site";
 import { cn } from "@/lib/utils";
 
-const title = "Pediatric speech therapy services | Expression Beyond Words";
+const title = "Our Services - Expression Beyond Words";
 const description =
   "Screenings, evaluations, in-home therapy, parent coaching, and IEP consultation for families in Northwest Houston and The Woodlands.";
 
@@ -32,22 +32,47 @@ export default function ServicesPage() {
   return (
     <SiteShell>
       <Hero hero={hero} image={images.servicesHero} />
-      <Section
-        eyebrow="Care options"
-        title="Pediatric speech & language services"
-      >
-        <div className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-start">
-          <ul className="space-y-4 text-lg text-[var(--ebw-muted)]">
-            {servicesOffered.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span
-                  className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--ebw-sage)]"
-                  aria-hidden
-                />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+      <Section>
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-[var(--ebw-sage)]">
+              Care options
+            </p>
+            <h2 className="mt-2 max-w-3xl font-display text-3xl font-semibold tracking-tight text-[var(--ebw-ink)] sm:text-4xl sm:leading-[1.25]">
+              Pediatric speech & language services
+            </h2>
+            <ul className="mt-8 space-y-4 text-lg text-[var(--ebw-muted)]">
+              {servicesOffered.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <span
+                    className="mt-2 h-2 w-2 shrink-0 rounded-full bg-[var(--ebw-sage)]"
+                    aria-hidden
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/pricing"
+                className={cn(
+                  buttonVariants({ variant: "default", size: "sm" }),
+                  "shadow-[var(--shadow-soft)] hover:-translate-y-0.5",
+                )}
+              >
+                View pricing
+              </Link>
+              <Link
+                href="/contact"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "sm" }),
+                  "border-primary text-primary hover:bg-muted",
+                )}
+              >
+                Request information
+              </Link>
+            </div>
+          </div>
           <div
             className={cn(
               "relative max-h-[36rem] overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)]",
@@ -65,26 +90,6 @@ export default function ServicesPage() {
               }}
             />
           </div>
-        </div>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link
-            href="/pricing"
-            className={cn(
-              buttonVariants({ variant: "default", size: "sm" }),
-              "shadow-[var(--shadow-soft)] hover:-translate-y-0.5",
-            )}
-          >
-            View pricing
-          </Link>
-          <Link
-            href="/contact"
-            className={cn(
-              buttonVariants({ variant: "outline", size: "sm" }),
-              "border-primary text-primary hover:bg-muted",
-            )}
-          >
-            Request information
-          </Link>
         </div>
       </Section>
       <FocusCardsSection cards={homePage.focusCards} />

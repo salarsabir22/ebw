@@ -51,9 +51,11 @@ export function ServicesPricing({
 
   return (
     <Section id={sectionId} eyebrow={eyebrow} title={title}>
-      <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">
-        {intro}
-      </p>
+      {intro ? (
+        <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">
+          {intro}
+        </p>
+      ) : null}
       <div className="mt-10 grid gap-8 lg:grid-cols-2">
         <div className="rounded-2xl border border-[var(--ebw-border)] bg-[var(--surface-container-low)] p-6 sm:p-8 shadow-[var(--shadow-soft)]">
           <h3 className="font-display text-xl font-semibold text-[var(--ebw-ink)]">
