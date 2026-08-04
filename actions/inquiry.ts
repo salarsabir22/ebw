@@ -17,11 +17,7 @@ const inquirySchema = z.object({
       const s = String(v).trim();
       return s.length ? s : undefined;
     }, z.string().max(40).optional()),
-  message: z
-    .string()
-    .trim()
-    .min(10, "Please share a bit more detail (at least 10 characters).")
-    .max(5000),
+  message: z.string().trim().min(1, "Please enter a message.").max(5000),
   newsletter: z.preprocess((v) => v === "on", z.boolean()),
   pagePath: z.preprocess(
     (v) => (typeof v === "string" && v.trim()) || "/",
