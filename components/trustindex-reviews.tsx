@@ -24,8 +24,19 @@ export function TrustIndexReviews() {
   }, []);
 
   return (
-    <Section eyebrow="Reviews" title="What families say">
-      <div ref={containerRef} className="mt-8 min-h-[12rem]" />
+    <Section>
+      <div className="mx-auto max-w-xl text-center">
+        <p className="text-sm font-semibold uppercase tracking-wide text-[var(--ebw-sage)]">
+          Reviews
+        </p>
+        <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-[var(--ebw-ink)] sm:text-4xl sm:leading-[1.25]">
+          What families say
+        </h2>
+        <div
+          ref={containerRef}
+          className="mt-8 flex min-h-[12rem] justify-center overflow-x-auto [&_.ti-widget]:mx-auto [&_.ti-widget]:!float-none"
+        />
+      </div>
     </Section>
   );
 }
