@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { PageImage } from "@/content/images";
+import { brand } from "@/content/site";
 import type { PageConfig } from "@/content/types";
 import { cn } from "@/lib/utils";
 import { TextBlockContent } from "../text-segments";
@@ -19,6 +20,18 @@ export function AboutBlock({
           <TextBlockContent block={p} />
         </p>
       ))}
+    </div>
+  );
+
+  const ashaCredential = (
+    <div className="mt-6">
+      <Image
+        src={brand.ashaLogoSrc}
+        alt={brand.ashaLogoAlt}
+        width={260}
+        height={72}
+        className="h-auto w-[220px] max-w-full sm:w-[260px]"
+      />
     </div>
   );
 
@@ -76,12 +89,14 @@ export function AboutBlock({
           </div>
           <div className="lg:order-1">
             {prose}
+            {ashaCredential}
             {specialties}
           </div>
         </div>
       ) : (
         <>
           <div className="mt-6">{prose}</div>
+          {ashaCredential}
           {specialties}
         </>
       )}

@@ -13,9 +13,7 @@ export const homePage: PageConfig = {
     eyebrow: brand.taglinePrimary,
     title: "In-Home Pediatric Speech Therapy in Northwest Houston",
     subtitle:
-      "Helping children build strong communication skills through personalized, play-based therapy in the comfort of your home, with a focus on early intervention.",
-    supportingParagraph:
-      "Supporting toddlers and school-aged children with speech, language, fluency, and autism-related communication needs.",
+      "Personalized, play-based speech therapy at home, supporting children with speech, language, fluency, and autism-related communication needs.",
     bilingualLine:
       "Bilingual speech therapy available in Urdu, Hindi, and English to support multilingual families.",
     primaryCta: { label: "Book a FREE 15-min consultation", href: "/contact" },

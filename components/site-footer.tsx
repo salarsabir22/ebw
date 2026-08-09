@@ -26,6 +26,15 @@ export function SiteFooter() {
           <p className="mt-3 text-sm font-medium leading-relaxed text-[color-mix(in_srgb,var(--ebw-footer-fg)_88%,transparent)]">
             {brand.taglinePrimary}
           </p>
+          <div className="mt-5 inline-flex rounded-md bg-white px-3 py-2">
+            <Image
+              src={brand.ashaLogoSrc}
+              alt={brand.ashaLogoAlt}
+              width={200}
+              height={56}
+              className="h-auto w-[180px] max-w-full"
+            />
+          </div>
         </div>
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-[color-mix(in_srgb,var(--ebw-footer-fg)_72%,transparent)]">

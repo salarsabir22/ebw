@@ -11,6 +11,12 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         Skip to content
       </a>
       <SiteHeader />
+      <div className="border-b border-[var(--outline-variant)] bg-[color-mix(in_srgb,var(--brand-teal)_8%,var(--surface))] px-3 py-2 text-center">
+        <p className="mx-auto max-w-7xl whitespace-nowrap text-[clamp(0.62rem,2.7vw,0.875rem)] italic leading-none text-[var(--ebw-ink)]">
+          Now Accepting Blue Cross Blue Shield of Texas{" "}
+          <strong className="font-bold">Insurance</strong>
+        </p>
+      </div>
       <main id="main" className="flex flex-1 flex-col">
         {children}
       </main>

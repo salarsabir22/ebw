@@ -5,15 +5,15 @@ export const woodlandsBundlePricing: readonly ServicesPricingBundle[] = [
   {
     name: "Double Up Bundle",
     lines: [
-      "2 × 30 min: $140 (Save $20)",
-      "2 × 45 min: $162 (Save $18)",
+      "2 x 30 min: $140 (Save $20)",
+      "2 x 45 min: $162 (Save $18)",
     ],
   },
   {
     name: "Monthly Progress Bundle",
     lines: [
-      "4 × 30 min: $290 (Save $30)",
-      "4 × 45 min: $324 (Save $36)",
+      "4 x 30 min: $290 (Save $30)",
+      "4 x 45 min: $324 (Save $36)",
     ],
   },
 ];
@@ -183,7 +183,7 @@ export const woodlandsServicesPricing = {
     title: "Travel Policy",
     paragraphs: [
       "We provide in home speech therapy throughout The Woodlands and nearby areas.",
-      "Free travel within a 10-mile radius of: 77380, 77382, 77384, 77385, 77386, 77389, 77354",
+      "Free travel within a 10 mile radius of: 77380, 77382, 77384, 77385, 77386, 77389, 77354",
       "$10-$20 travel fee beyond this area",
       "Services available up to 25 miles",
       "Virtual sessions are also available if appropriate for your child's needs.",

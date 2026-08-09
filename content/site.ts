@@ -7,6 +7,8 @@ import type { FaqItem } from "./types";
 export const brand = {
   logoSrc: "/logo.png",
   logoAlt: "Expression Beyond Words PLLC logo",
+  ashaLogoSrc: "/images/asha-ccc-slp.png",
+  ashaLogoAlt: "ASHA Certified Speech-Language Pathologist (CCC-SLP)",
   lineOfBusiness: "Speech Therapy" as const,
   taglinePrimary: "Making every expression count" as const,
   taglineSecondary:
@@ -60,15 +62,15 @@ export const pricing = {
     {
       name: "“Double-Up” Bundle",
       lines: [
-        "2 × 30-Minute Sessions: $140 (Save $20)",
-        "2 × 45-Minute Sessions: $162 (Save $18)",
+        "2 x 30-minute sessions: $140 (Save $20)",
+        "2 x 45-minute sessions: $162 (Save $18)",
       ],
     },
     {
       name: "“Monthly Progress” Bundle",
       lines: [
-        "4 × 30-Minute Sessions: $290 (Save $30)",
-        "4 × 45-Minute Sessions: $324 (Save $36)",
+        "4 x 30-minute sessions: $290 (Save $30)",
+        "4 x 45-minute sessions: $324 (Save $36)",
       ],
     },
   ],
@@ -93,7 +95,12 @@ export const faqs: FaqItem[] = [
   {
     question: "Do you offer in-home pediatric speech therapy in Northwest Houston?",
     answer:
-      "Yes, we provide in-home pediatric speech therapy in Northwest Houston, serving Spring, The Woodlands, Tomball, Conroe, and Magnolia. Travel is free within a 10-mile radius of select zip codes (77380, 77382, 77384, 77385, 77386, 77389, 77354). A small travel fee may apply outside this area.",
+      "Yes, we provide in-home pediatric speech therapy in Northwest Houston, serving Spring, The Woodlands, Tomball, Conroe, and Magnolia. Travel is free within a 10 mile radius of select zip codes (77380, 77382, 77384, 77385, 77386, 77389, 77354). A small travel fee may apply outside this area.",
+  },
+  {
+    question: "How do I know if my child needs a speech therapist?",
+    answer:
+      "If your child has difficulty speaking, understanding language, or expressing themselves, an evaluation is recommended. Early intervention can significantly improve long-term outcomes.",
   },
   {
     question: "How do I book pediatric speech therapy?",
@@ -134,10 +141,5 @@ export const faqs: FaqItem[] = [
     question: "Is in-home speech therapy effective?",
     answer:
       "Yes, therapy in a familiar environment often improves engagement, comfort, and real-life application of communication skills.",
-  },
-  {
-    question: "How do I know if my child needs a speech therapist?",
-    answer:
-      "If your child has difficulty speaking, understanding language, or expressing themselves, an evaluation is recommended. Early intervention can significantly improve long-term outcomes.",
   },
 ];

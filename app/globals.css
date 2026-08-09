@@ -155,6 +155,24 @@ body {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
+  /* Plus Jakarta Sans: contextual ligatures can turn digit runs (e.g. 30-minute, 10-mile) into missing glyphs */
+  font-variant-ligatures: no-contextual;
+}
+
+@keyframes call-now-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--coral-warm) 45%, transparent);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 8px color-mix(in srgb, var(--coral-warm) 0%, transparent);
+  }
+}
+
+.call-now-pulse {
+  animation: call-now-pulse 1.6s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -165,6 +183,10 @@ body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .call-now-pulse {
+    animation: none;
   }
 }
 

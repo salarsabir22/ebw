@@ -160,7 +160,7 @@ export function ServicesPricing({
               {pricing.travel.title}
             </h3>
             <p className="mt-3 text-[var(--ebw-muted)]">
-              Travel is free within a {pricing.travel.freeRadiusMiles}-mile radius of
+              Travel is free within a {pricing.travel.freeRadiusMiles} mile radius of
               the following zip codes: {pricing.travel.zips.join(", ")}.
             </p>
             <p className="mt-3 text-[var(--ebw-muted)]">{pricing.travel.feeNote}</p>
