@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { PageImage } from "@/content/images";
 import type { HeroConfig, HeroCta } from "@/content/types";
+import { InquiryForm } from "@/components/inquiry-form";
 import { buttonVariants } from "@/components/ui/button";
 import { contact } from "@/content/site";
 import { cn } from "@/lib/utils";
@@ -14,11 +15,16 @@ export function Hero({
   hero,
   image,
   primaryCtaHref = "/contact",
+  showInquiryForm = false,
+  inquiryPagePath = "/",
 }: {
   hero: HeroConfig;
   image?: PageImage;
   /** Fallback when `hero.primaryCta` is not set */
   primaryCtaHref?: string;
+  /** Compact contact form under the hero CTAs (same fields as /contact). */
+  showInquiryForm?: boolean;
+  inquiryPagePath?: string;
 }) {
   const primaryBtn = cn(
     buttonVariants({ variant: "default", size: "lg" }),
@@ -42,11 +48,14 @@ export function Hero({
             "radial-gradient(880px 520px at 18% 0%, color-mix(in srgb, var(--brand-teal) 22%, transparent), transparent 58%), radial-gradient(720px 440px at 92% 12%, color-mix(in srgb, var(--brand-pink) 18%, transparent), transparent 52%)",
         }}
       />
-      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-28">
+      <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
         <div
           className={
-            image
-              ? "grid items-center gap-10 lg:grid-cols-2 lg:gap-14"
+            image || showInquiryForm
+              ? cn(
+                  "grid gap-10 lg:grid-cols-2 lg:gap-12 xl:gap-16",
+                  showInquiryForm ? "lg:items-center" : "items-center",
+                )
               : "max-w-3xl"
           }
         >
@@ -54,7 +63,7 @@ export function Hero({
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">
               {hero.eyebrow}
             </p>
-            <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.15] lg:text-[3rem] lg:leading-[1.12]">
+            <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl sm:leading-[1.15] lg:text-[2.75rem] lg:leading-[1.15] xl:text-[3rem] xl:leading-[1.12]">
               {hero.title}
             </h1>
             <p className="mt-5 max-w-2xl text-lg font-normal leading-relaxed text-muted-foreground sm:text-[1.125rem]">
@@ -75,7 +84,12 @@ export function Hero({
                 {hero.brandQuote}
               </p>
             ) : null}
-            <div className="mt-8 flex min-w-0 flex-col gap-3">
+            <div
+              className={cn(
+                "mt-8 flex min-w-0 flex-col gap-3",
+                showInquiryForm && "lg:hidden",
+              )}
+            >
               {primaryCta && !isTelCta(primaryCta) ? (
                 <Link href={primaryCta.href} className={primaryBtn}>
                   {primaryCta.label}
@@ -89,7 +103,7 @@ export function Hero({
                   Request information
                 </Link>
               )}
-              {secondaryCta && isTelCta(secondaryCta) ? (
+              {showInquiryForm ? null : secondaryCta && isTelCta(secondaryCta) ? (
                 <a href={`tel:${contact.phoneE164}`} className={secondaryBtn}>
                   {secondaryCta.label}
                 </a>
@@ -103,6 +117,15 @@ export function Hero({
                 </a>
               )}
             </div>
+            {showInquiryForm ? (
+              <div className="mt-5 lg:hidden">
+                <InquiryForm
+                  pagePath={inquiryPagePath}
+                  variant="compact"
+                  idPrefix="hero"
+                />
+              </div>
+            ) : null}
             {hero.servingLineSegments && hero.servingLineSegments.length > 0 ? (
               <p className="mt-6 max-w-2xl text-base font-medium leading-relaxed text-muted-foreground">
                 {hero.servingLineSegments.map((seg, i) =>
@@ -125,7 +148,15 @@ export function Hero({
               </p>
             ) : null}
           </div>
-          {image ? (
+          {showInquiryForm ? (
+            <div className="hidden min-w-0 lg:block">
+              <InquiryForm
+                pagePath={inquiryPagePath}
+                variant="compact"
+                idPrefix="hero-desktop"
+              />
+            </div>
+          ) : image ? (
             <div
               className={cn(
                 "relative mx-auto w-full min-w-0 max-w-xl overflow-hidden rounded-3xl shadow-[var(--shadow-soft-strong)] lg:max-h-[36rem] lg:max-w-none",

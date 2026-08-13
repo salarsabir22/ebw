@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AboutBlock } from "@/components/blocks/about-block";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
+import { SectionCta } from "@/components/section-cta";
 import { SiteShell } from "@/components/site-shell";
 import { images } from "@/content/images";
 import { homePage } from "@/content/home";
@@ -30,6 +31,7 @@ export default function AboutPage() {
     <SiteShell>
       <Hero hero={aboutHero} image={images.aboutHero} />
       <AboutBlock about={homePage.about} image={images.siteSessionB} />
+      <SectionCta heading="Want to see if therapy is a fit for your child?" />
       {homePage.bilingual ? (
         <Section
           eyebrow="Bilingual care"
@@ -45,6 +47,7 @@ export default function AboutPage() {
           </div>
         </Section>
       ) : null}
+      <SectionCta heading="Ready to get started?" />
     </SiteShell>
   );
 }

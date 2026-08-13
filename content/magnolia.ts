@@ -15,7 +15,7 @@ export const magnoliaPage: PageConfig = {
     supportingParagraph:
       "At Expression Beyond Words, we provide compassionate and individualized speech therapy services for children throughout Magnolia TX. Our mobile therapy model allows children to receive professional support in the comfort of their own environment, creating opportunities for natural learning and lasting progress. Whether your child is experiencing speech delays, language difficulties, articulation challenges, social communication concerns, or autism-related communication needs, we are here to support every step of their communication journey.",
     primaryCta: {
-      label: "Schedule a FREE 15-Minute Consultation Today",
+      label: "Schedule a FREE 15 minute consultation today",
       href: "/contact",
     },
     hideSecondaryCta: true,

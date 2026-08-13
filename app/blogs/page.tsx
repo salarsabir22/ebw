@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/section";
+import { SectionCta } from "@/components/section-cta";
 import { SiteShell } from "@/components/site-shell";
 import { blogPosts } from "@/content/blogs";
 import { site } from "@/content/site";
@@ -69,6 +70,7 @@ export default function BlogsPage() {
           ))}
         </ul>
       </Section>
+      <SectionCta heading="Have concerns about your child's speech?" />
     </SiteShell>
   );
 }

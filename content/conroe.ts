@@ -15,7 +15,7 @@ export const conroePage: PageConfig = {
     supportingParagraph:
       "At Expression Beyond Words, we provide compassionate, family-centered speech therapy services for children throughout Conroe, TX. Our mobile approach allows children to receive professional support in the environment where they feel most comfortable, making therapy more engaging, practical, and effective. Whether your child is experiencing speech delays, language difficulties, articulation challenges, social communication concerns, or autism-related communication needs, we are here to help them thrive.",
     primaryCta: {
-      label: "Schedule a FREE 15-Minute Consultation Today",
+      label: "Schedule a FREE 15 minute consultation today",
       href: "/contact",
     },
     hideSecondaryCta: true,

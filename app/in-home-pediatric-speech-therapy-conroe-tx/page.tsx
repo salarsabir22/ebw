@@ -5,6 +5,7 @@ import { ContentListSection } from "@/components/blocks/content-list-section";
 import { CollaboratorsSection, WhyChooseSection } from "@/components/blocks/therapy-stack";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
+import { SectionCta } from "@/components/section-cta";
 import { SiteShell } from "@/components/site-shell";
 import { buttonVariants } from "@/components/ui/button";
 import { images } from "@/content/images";
@@ -55,22 +56,26 @@ export default function ConroeTxPage() {
           </div>
         </Section>
       ) : null}
+      <SectionCta heading="Ready to book in-home therapy in Conroe?" />
       <ContentListSection {...conroeInHomeTherapySection} />
       <ContentListSection
         {...conroePediatricTherapySection}
         className="bg-[var(--surface-container-low)]"
       />
+      <SectionCta heading="Want to talk about your child's goals?" />
       <ContentListSection {...conroeKidsTherapySection} />
       <ContentListSection
         {...conroeSpeechDelaySection}
         className="bg-[var(--surface-container-low)]"
       />
+      <SectionCta heading="Let's build a plan that fits your family." />
       <CollaboratorsSection collaborators={conroePage.collaborators} />
       <ContentListSection {...conroePrivateTherapySection} />
       <ContentListSection
         {...conroeEvaluationSection}
         className="bg-[var(--surface-container-low)]"
       />
+      <SectionCta heading="Ready to get started?" />
       <WhyChooseSection why={conroePage.why} />
       <Section
         eyebrow="Get started"

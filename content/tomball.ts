@@ -15,7 +15,7 @@ export const tomballPage: PageConfig = {
     supportingParagraph:
       "At Expression Beyond Words, we provide compassionate and individualized speech therapy services for children throughout Tomball, TX. Our mobile approach allows children to learn and grow in familiar surroundings while receiving expert support tailored to their unique communication needs. Whether your child is experiencing speech delays, language challenges, articulation difficulties, social communication concerns, or autism-related communication needs, we are here to help.",
     primaryCta: {
-      label: "Schedule a FREE 15-Minute Consultation Today",
+      label: "Schedule a FREE 15 minute consultation today",
       href: "/contact",
     },
     hideSecondaryCta: true,

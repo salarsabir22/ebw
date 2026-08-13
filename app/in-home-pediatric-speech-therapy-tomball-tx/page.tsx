@@ -5,6 +5,7 @@ import { ContentListSection } from "@/components/blocks/content-list-section";
 import { CollaboratorsSection, WhyChooseSection } from "@/components/blocks/therapy-stack";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
+import { SectionCta } from "@/components/section-cta";
 import { SiteShell } from "@/components/site-shell";
 import { buttonVariants } from "@/components/ui/button";
 import { images } from "@/content/images";
@@ -55,11 +56,13 @@ export default function TomballTxPage() {
           </div>
         </Section>
       ) : null}
+      <SectionCta heading="Ready to book in-home therapy in Tomball?" />
       <ContentListSection {...tomballInHomeTherapySection} />
       <ContentListSection
         {...tomballPediatricTherapySection}
         className="bg-[var(--surface-container-low)]"
       />
+      <SectionCta heading="Want to talk about your child's goals?" />
       <Section title={kidsTherapy.title}>
         <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[var(--ebw-muted)]">
           {kidsTherapy.intro}
@@ -71,12 +74,14 @@ export default function TomballTxPage() {
         ) : null}
       </Section>
       <ContentListSection {...tomballSpeechDelaySection} />
+      <SectionCta heading="Let's build a plan that fits your family." />
       <CollaboratorsSection collaborators={tomballPage.collaborators} />
       <ContentListSection
         {...tomballPrivateTherapySection}
         className="bg-[var(--surface-container-low)]"
       />
       <ContentListSection {...tomballEvaluationSection} />
+      <SectionCta heading="Ready to get started?" />
       <WhyChooseSection why={tomballPage.why} />
       <Section
         eyebrow="Get started"

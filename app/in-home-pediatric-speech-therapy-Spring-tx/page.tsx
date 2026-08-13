@@ -9,6 +9,7 @@ import {
 } from "@/components/blocks/therapy-stack";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
+import { SectionCta } from "@/components/section-cta";
 import { ServicesPricing } from "@/components/services-pricing";
 import { SiteShell } from "@/components/site-shell";
 import { buttonVariants } from "@/components/ui/button";
@@ -59,6 +60,7 @@ export default function SpringTxPage() {
           </div>
         </Section>
       ) : null}
+      <SectionCta heading="Ready to book in-home therapy in Spring?" />
       <ServicesPricing
         sectionId="spring-services"
         eyebrow={springServicesPricing.sectionEyebrow}
@@ -76,13 +78,16 @@ export default function SpringTxPage() {
         {...springEvaluationSection}
         className="bg-[var(--surface-container-low)]"
       />
+      <SectionCta heading="Have questions about an evaluation?" />
       <ContentListSection {...springSpeechDelaySection} />
       <PlayApproachSection playBased={springPage.playBased} showOutro={false} />
+      <SectionCta heading="Let's build a plan that fits your family." />
       <ContentListSection
         {...springPrivateTherapySection}
         className="bg-[var(--surface-container-low)]"
       />
       <CollaboratorsSection collaborators={springPage.collaborators} />
+      <SectionCta heading="Ready to get started?" />
       <WhyChooseSection why={springPage.why} />
       <Section
         eyebrow="Get started"

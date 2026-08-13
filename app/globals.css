@@ -109,6 +109,8 @@
   --color-brand-teal: var(--brand-teal);
   --color-brand-rose: var(--brand-rose);
   --font-heading: var(--font-display);
+  --font-sans--font-feature-settings: "calt" 0;
+  --default-font-feature-settings: "calt" 0;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -151,12 +153,23 @@
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
 }
 
+/*
+  Plus Jakarta Sans (Google Fonts) includes `calt` lookups for digit runs
+  (15-min, phone numbers, prices) but ships without those glyphs — they
+  render as empty squares. Tailwind preflight sets font-feature-settings
+  to `normal` on html, which re-enables calt; set it on every element.
+*/
+*,
+*::before,
+*::after {
+  font-variant-ligatures: none;
+  font-feature-settings: "calt" 0;
+}
+
 body {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  /* Plus Jakarta Sans: contextual ligatures can turn digit runs (e.g. 30-minute, 10-mile) into missing glyphs */
-  font-variant-ligatures: no-contextual;
 }
 
 @keyframes call-now-pulse {
@@ -241,5 +254,15 @@ body {
   }
   html {
     @apply font-sans;
+    font-variant-ligatures: none;
+    font-feature-settings: "calt" 0;
+  }
+  button,
+  input,
+  select,
+  textarea,
+  a {
+    font-variant-ligatures: none;
+    font-feature-settings: "calt" 0;
   }
 }

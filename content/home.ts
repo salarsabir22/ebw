@@ -16,7 +16,7 @@ export const homePage: PageConfig = {
       "Personalized, play-based speech therapy at home, supporting children with speech, language, fluency, and autism-related communication needs.",
     bilingualLine:
       "Bilingual speech therapy available in Urdu, Hindi, and English to support multilingual families.",
-    primaryCta: { label: "Book a FREE 15-min consultation", href: "/contact" },
+    primaryCta: { label: "Book a FREE 15 min consultation", href: "/contact" },
     secondaryCta: { label: "Schedule an Evaluation", href: "/contact" },
     servingLineSegments: [
       "📍 Serving: ",

@@ -93,7 +93,25 @@ export function BlogArticle({ post }: { post: BlogPost }) {
       </div>
       <div className="mt-10 border-t border-[var(--ebw-border)] pt-10">
         {post.blocks.map((block, index) => (
-          <BlogBlockView key={`${block.type}-${index}`} block={block} />
+          <div key={`${block.type}-${index}`}>
+            <BlogBlockView block={block} />
+            {index === Math.floor((post.blocks.length - 1) / 2) ? (
+              <div className="mt-12 flex flex-col items-start gap-4 rounded-2xl border border-primary/30 bg-[color-mix(in_srgb,var(--brand-teal)_10%,var(--surface))] p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+                <p className="font-display text-lg font-semibold tracking-tight text-[var(--ebw-ink)]">
+                  Have concerns about your child&apos;s speech?
+                </p>
+                <Link
+                  href="/contact"
+                  className={cn(
+                    buttonVariants({ variant: "default", size: "sm" }),
+                    "min-h-10 shrink-0 px-5 shadow-[var(--shadow-soft)]",
+                  )}
+                >
+                  Book now
+                </Link>
+              </div>
+            ) : null}
+          </div>
         ))}
       </div>
       <div className="mt-12 flex flex-wrap gap-3 border-t border-[var(--ebw-border)] pt-10">
@@ -104,7 +122,7 @@ export function BlogArticle({ post }: { post: BlogPost }) {
             "shadow-[var(--shadow-soft)] hover:-translate-y-0.5",
           )}
         >
-          Request information
+          Book now
         </Link>
         <Link
           href="/blogs"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/hero";
+import { SectionCta } from "@/components/section-cta";
 import { ServicesPricing } from "@/components/services-pricing";
 import { SiteShell } from "@/components/site-shell";
 import { images } from "@/content/images";
@@ -27,6 +28,7 @@ export default function PricingPage() {
     <SiteShell>
       <Hero hero={hero} image={images.pricingHero} primaryCtaHref="/contact" />
       <ServicesPricing sectionId="pricing" eyebrow="" title="" intro="" />
+      <SectionCta heading="Ready to book an evaluation or bundle?" />
     </SiteShell>
   );
 }

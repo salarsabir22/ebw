@@ -1,6 +1,23 @@
+import Link from "next/link";
 import type { ServicesPricingBundle } from "@/content/types";
 import { iepNote, pricing, servicesOffered } from "@/content/site";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Section } from "./section";
+
+function PackageCta({ label }: { label: string }) {
+  return (
+    <Link
+      href="/contact"
+      className={cn(
+        buttonVariants({ variant: "default", size: "sm" }),
+        "mt-5 h-auto min-h-10 px-4 text-sm shadow-[var(--shadow-soft)]",
+      )}
+    >
+      {label}
+    </Link>
+  );
+}
 
 type ServicesPricingProps = {
   /** Use `pricing` on the dedicated pricing page to avoid duplicate ids */
@@ -90,6 +107,7 @@ export function ServicesPricing({
             <p className="mt-3 text-sm leading-relaxed text-[var(--ebw-muted)]">
               {evaluationDetail}
             </p>
+            <PackageCta label="Book now" />
           </div>
           <div className="rounded-2xl border border-[var(--ebw-border)] bg-[var(--surface-container-lowest)] p-6 sm:p-8 shadow-[var(--shadow-soft)]">
             <h3 className="font-display text-xl font-semibold text-[var(--ebw-ink)]">
@@ -108,6 +126,7 @@ export function ServicesPricing({
                 </li>
               ))}
             </ul>
+            <PackageCta label="Book now" />
           </div>
         </div>
       </div>
@@ -139,6 +158,7 @@ export function ServicesPricing({
                 <li key={line}>{line}</li>
               ))}
             </ul>
+            <PackageCta label="Book now" />
           </div>
         ))}
       </div>

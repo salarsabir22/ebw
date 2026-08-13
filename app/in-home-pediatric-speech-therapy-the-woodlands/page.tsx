@@ -8,6 +8,7 @@ import {
 } from "@/components/blocks/therapy-stack";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
+import { SectionCta } from "@/components/section-cta";
 import { ServicesPricing } from "@/components/services-pricing";
 import { SiteShell } from "@/components/site-shell";
 import { buttonVariants } from "@/components/ui/button";
@@ -55,6 +56,7 @@ export default function WoodlandsPage() {
           </div>
         </Section>
       ) : null}
+      <SectionCta heading="Ready to book in-home therapy in The Woodlands?" />
       <ServicesPricing
         sectionId="woodlands-services"
         eyebrow={woodlandsServicesPricing.sectionEyebrow}
@@ -69,7 +71,9 @@ export default function WoodlandsPage() {
         travelCustom={woodlandsServicesPricing.travel}
       />
       <PlayApproachSection playBased={woodlandsPage.playBased} showOutro={false} />
+      <SectionCta heading="Let's build a plan that fits your family." />
       <CollaboratorsSection collaborators={woodlandsPage.collaborators} />
+      <SectionCta heading="Ready to get started?" />
       <WhyChooseSection why={woodlandsPage.why} />
       <Section
         eyebrow="Get started"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FaqList } from "@/components/faq-list";
+import { SectionCta } from "@/components/section-cta";
 import { SiteShell } from "@/components/site-shell";
 import { homePage } from "@/content/home";
 import { faqs, site } from "@/content/site";
@@ -22,6 +23,7 @@ export default function FaqPage() {
         introSubtitle={homePage.faqIntro.subtitle}
         items={faqs}
       />
+      <SectionCta heading="Still have questions? We're happy to help." />
     </SiteShell>
   );
 }

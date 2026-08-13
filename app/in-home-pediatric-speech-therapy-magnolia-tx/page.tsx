@@ -5,6 +5,7 @@ import { ContentListSection } from "@/components/blocks/content-list-section";
 import { CollaboratorsSection, WhyChooseSection } from "@/components/blocks/therapy-stack";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
+import { SectionCta } from "@/components/section-cta";
 import { SiteShell } from "@/components/site-shell";
 import { buttonVariants } from "@/components/ui/button";
 import { images } from "@/content/images";
@@ -55,22 +56,26 @@ export default function MagnoliaTxPage() {
           </div>
         </Section>
       ) : null}
+      <SectionCta heading="Ready to book in-home therapy in Magnolia?" />
       <ContentListSection {...magnoliaInHomeTherapySection} />
       <ContentListSection
         {...magnoliaPediatricTherapySection}
         className="bg-[var(--surface-container-low)]"
       />
+      <SectionCta heading="Want to talk about your child's goals?" />
       <ContentListSection {...magnoliaKidsTherapySection} />
       <ContentListSection
         {...magnoliaSpeechDelaySection}
         className="bg-[var(--surface-container-low)]"
       />
+      <SectionCta heading="Let's build a plan that fits your family." />
       <CollaboratorsSection collaborators={magnoliaPage.collaborators} />
       <ContentListSection {...magnoliaPrivateTherapySection} />
       <ContentListSection
         {...magnoliaEvaluationSection}
         className="bg-[var(--surface-container-low)]"
       />
+      <SectionCta heading="Ready to get started?" />
       <WhyChooseSection why={magnoliaPage.why} />
       <Section
         eyebrow="Get started"

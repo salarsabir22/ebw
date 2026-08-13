@@ -9,6 +9,7 @@ import {
 import { FaqList } from "@/components/faq-list";
 import { Hero } from "@/components/hero";
 import { Section } from "@/components/section";
+import { SectionCta } from "@/components/section-cta";
 import { ServicesPricing } from "@/components/services-pricing";
 import { SiteShell } from "@/components/site-shell";
 import { TrustIndexReviews } from "@/components/trustindex-reviews";
@@ -35,9 +36,14 @@ export default function Home() {
 
   return (
     <SiteShell>
-      <Hero hero={homePage.hero} image={images.homeHero} />
+      <Hero
+        hero={homePage.hero}
+        showInquiryForm
+        inquiryPagePath="/"
+      />
       <TrustIndexReviews />
       <AboutBlock about={homePage.about} image={images.siteSessionB} />
+      <SectionCta heading="Want to talk about your child's communication?" />
       {homePage.bilingual ? (
         <Section
           eyebrow="Northwest Houston"
@@ -57,8 +63,10 @@ export default function Home() {
         eyebrow="Services & pricing"
         title="Pediatric Speech Therapy Services & Pricing in Northwest Houston"
       />
+      <SectionCta heading="Ready to book an evaluation or session?" />
       <PlayApproachSection playBased={homePage.playBased} showOutro={false} />
       <CollaboratorsSection collaborators={homePage.collaborators} />
+      <SectionCta heading="Let's build a plan that fits your family." />
       <WhyChooseSection why={homePage.why} />
       <Section
         eyebrow="Get started"
@@ -98,6 +106,7 @@ export default function Home() {
         introSubtitle={homePage.faqIntro.subtitle}
         items={faqs}
       />
+      <SectionCta heading="Still have questions? We're happy to help." />
     </SiteShell>
   );
 }
