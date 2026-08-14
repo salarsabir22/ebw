@@ -12,7 +12,7 @@ import { Section } from "@/components/section";
 import { SectionCta } from "@/components/section-cta";
 import { ServicesPricing } from "@/components/services-pricing";
 import { SiteShell } from "@/components/site-shell";
-import { TrustIndexReviews } from "@/components/trustindex-reviews";
+// import { TrustIndexReviews } from "@/components/trustindex-reviews";
 import { buttonVariants } from "@/components/ui/button";
 import { images } from "@/content/images";
 import { homePage } from "@/content/home";
@@ -41,7 +41,7 @@ export default function Home() {
         showInquiryForm
         inquiryPagePath="/"
       />
-      <TrustIndexReviews />
+      {/* <TrustIndexReviews /> */}
       <AboutBlock about={homePage.about} image={images.siteSessionB} />
       <SectionCta heading="Want to talk about your child's communication?" />
       {homePage.bilingual ? (
