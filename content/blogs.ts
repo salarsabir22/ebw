@@ -28,7 +28,7 @@ export type BlogPost = {
   blocks: readonly BlogBlock[];
 };
 
-export const blogPosts: readonly BlogPost[] = [
+const allBlogPosts: readonly BlogPost[] = [
   {
     slug: "speech-therapy-in-the-woodlands-home-based-care",
     title:
@@ -4033,6 +4033,22 @@ export const blogPosts: readonly BlogPost[] = [
     ],
   },
 ];
+
+/** Currently live posts. Other entries in `allBlogPosts` are held back for now. */
+const publishedSlugs = [
+  "speech-delay-vs-language-delay",
+  "why-in-home-pediatric-speech-therapy-is-more-effective",
+  "how-parents-can-improve-childs-speech-at-home",
+  "10-signs-your-child-may-need-speech-therapy",
+] as const;
+
+export const blogPosts: readonly BlogPost[] = publishedSlugs.map((slug) => {
+  const post = allBlogPosts.find((item) => item.slug === slug);
+  if (!post) {
+    throw new Error(`Missing blog post: ${slug}`);
+  }
+  return post;
+});
 
 export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
