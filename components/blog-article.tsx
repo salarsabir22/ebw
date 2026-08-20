@@ -60,6 +60,63 @@ function BlogBlockView({ block }: { block: BlogBlock }) {
     );
   }
 
+  if (block.type === "quotes") {
+    return (
+      <div className="mt-6 space-y-3">
+        {block.items.map((item) => (
+          <blockquote
+            key={item}
+            className="border-l-4 border-primary/50 pl-4 text-lg italic leading-relaxed text-[var(--ebw-ink)]"
+          >
+            “{item}”
+          </blockquote>
+        ))}
+      </div>
+    );
+  }
+
+  if (block.type === "table") {
+    return (
+      <div className="mt-6 overflow-x-auto rounded-2xl border border-[var(--ebw-border)] bg-[var(--surface-container-lowest)] shadow-[var(--shadow-soft)]">
+        <table className="w-full min-w-[28rem] border-collapse text-left text-base text-[var(--ebw-muted)]">
+          <thead>
+            <tr className="bg-[color-mix(in_srgb,var(--brand-teal)_12%,var(--surface))]">
+              {block.headers.map((header) => (
+                <th
+                  key={header}
+                  className="px-4 py-3 font-display text-sm font-semibold tracking-tight text-[var(--ebw-ink)] sm:px-5 sm:text-base"
+                >
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {block.rows.map((row, rowIndex) => (
+              <tr
+                key={row.join("-")}
+                className={
+                  rowIndex % 2 === 0
+                    ? "bg-[var(--surface-container-lowest)]"
+                    : "bg-[var(--surface-container-low)]"
+                }
+              >
+                {row.map((cell, cellIndex) => (
+                  <td
+                    key={`${rowIndex}-${cellIndex}`}
+                    className="px-4 py-3 align-top leading-relaxed sm:px-5"
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   return (
     <div className="mt-6 space-y-4 text-lg leading-relaxed text-[var(--ebw-muted)] first:mt-0">
       {block.paragraphs.map((paragraph, i) => (
@@ -89,6 +146,9 @@ export function BlogArticle({ post }: { post: BlogPost }) {
           priority
           sizes="(max-width: 768px) 100vw, 768px"
           className="object-cover"
+          style={{
+            objectPosition: post.featuredImage.objectPosition ?? "center",
+          }}
         />
       </div>
       <div className="mt-10 border-t border-[var(--ebw-border)] pt-10">

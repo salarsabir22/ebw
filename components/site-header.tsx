@@ -144,7 +144,7 @@ export function SiteHeader() {
           />
           <span className="font-display text-[0.95rem] font-semibold tracking-tight text-foreground sm:text-lg">
             <span className="block">Expression Beyond</span>
-            <span className="block">Words</span>
+            <span className="block">Words PLLC</span>
           </span>
         </Link>
         <nav
