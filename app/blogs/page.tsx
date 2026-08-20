@@ -33,35 +33,38 @@ export default function BlogsPage() {
           Practical guidance for families navigating speech and language
           development, early signs of delay, and pediatric speech therapy.
         </p>
-        <ul className="mt-10 space-y-6">
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
             <li key={post.slug}>
               <Link
                 href={`/blogs/${post.slug}`}
-                className="group block overflow-hidden rounded-2xl border border-[var(--ebw-border)] bg-[var(--surface-container-low)] shadow-[var(--shadow-soft)] transition duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft-strong)]"
+                className="group flex h-full flex-col overflow-hidden rounded-xl border border-[var(--ebw-border)] bg-[var(--surface-container-low)] shadow-[var(--shadow-soft)] transition duration-200 ease-out hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft-strong)]"
               >
                 <div className="relative aspect-[16/9] w-full overflow-hidden">
                   <Image
                     src={post.featuredImage.src}
                     alt={post.featuredImage.alt}
                     fill
-                    sizes="(max-width: 768px) 100vw, 896px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                    style={{
+                      objectPosition: post.featuredImage.objectPosition ?? "center",
+                    }}
                   />
                 </div>
-                <div className="p-6 sm:p-8">
-                  <p className="text-sm font-medium text-[var(--ebw-muted)]">
+                <div className="flex flex-1 flex-col p-4 sm:p-5">
+                  <p className="text-xs font-medium text-[var(--ebw-muted)]">
                     <time dateTime={post.publishedAt}>
                       {formatDate(post.publishedAt)}
                     </time>
                   </p>
-                  <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight text-[var(--ebw-ink)] group-hover:text-primary">
+                  <h2 className="mt-1.5 font-display text-base font-semibold leading-snug tracking-tight text-[var(--ebw-ink)] group-hover:text-primary sm:text-lg">
                     {post.title}
                   </h2>
-                  <p className="mt-3 text-lg leading-relaxed text-[var(--ebw-muted)]">
+                  <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--ebw-muted)]">
                     {post.description}
                   </p>
-                  <p className="mt-4 text-sm font-semibold text-primary">
+                  <p className="mt-auto pt-3 text-sm font-semibold text-primary">
                     Read article
                   </p>
                 </div>
