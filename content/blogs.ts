@@ -1,11 +1,13 @@
+import type { TextBlock } from "./types";
+
 export type BlogBlock =
-  | { type: "paragraphs"; paragraphs: readonly string[] }
+  | { type: "paragraphs"; paragraphs: readonly TextBlock[] }
   | { type: "heading"; heading: string }
   | {
       type: "numbered";
       number: number;
       title: string;
-      paragraphs: readonly string[];
+      paragraphs: readonly TextBlock[];
     }
   | { type: "list"; intro?: string; items: readonly string[] }
   | { type: "quotes"; items: readonly string[] }
@@ -2595,301 +2597,6 @@ const allBlogPosts: readonly BlogPost[] = [
     ],
   },
   {
-    slug: "speech-therapy-for-children-with-autism",
-    title:
-      "Speech Therapy for Children with Autism: What Parents Should Expect",
-    description:
-      "What speech therapy looks like for children with autism—evaluations, play-based sessions, parent involvement, and why in-home care can help.",
-    publishedAt: "2026-08-20",
-    featuredImage: {
-      src: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1600&q=80",
-      alt: "Young children playing with colorful building blocks during a play-based learning activity",
-      objectPosition: "center 45%",
-    },
-    blocks: [
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Receiving an autism diagnosis for your child can bring a mix of emotions and questions. One of the most common concerns parents have is how autism may affect their child's ability to communicate. While every child with autism is unique, many experience challenges with speech, language, and social communication that can make everyday interactions more difficult.",
-          "The good news is that speech therapy for children with autism can help children develop the communication skills they need to express themselves, build relationships, and participate more confidently in daily life. Understanding what to expect from speech therapy can help you feel more prepared and involved in your child's progress.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "How Autism Can Affect Communication",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Autism Spectrum Disorder (ASD) affects communication differently for every child. Some children may begin talking later than expected, while others develop a large vocabulary but struggle with conversations or understanding social cues.",
-        ],
-      },
-      {
-        type: "list",
-        intro: "Common communication challenges may include:",
-        items: [
-          "Delayed speech development",
-          "Limited vocabulary",
-          "Difficulty expressing wants and needs",
-          "Trouble understanding spoken language",
-          "Repeating words or phrases (echolalia)",
-          "Difficulty making eye contact",
-          "Challenges with turn-taking during conversations",
-          "Limited social interaction",
-          "Difficulty understanding facial expressions or body language",
-        ],
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Since every child has different strengths and needs, therapy is always tailored to the individual.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "What Is Speech Therapy for Children with Autism?",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Speech therapy focuses on helping children improve both verbal and nonverbal communication. A licensed speech-language pathologist evaluates your child's communication abilities and creates a personalized treatment plan based on their developmental level and goals.",
-        ],
-      },
-      {
-        type: "list",
-        intro: "Depending on your child's needs, therapy may focus on:",
-        items: [
-          "Developing first words",
-          "Expanding vocabulary",
-          "Improving sentence formation",
-          "Enhancing speech clarity",
-          "Strengthening listening and comprehension skills",
-          "Building social communication",
-          "Improving conversational skills",
-          "Using alternative communication methods when appropriate",
-        ],
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "The ultimate goal is to help your child communicate more effectively in everyday situations.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "What Happens During the First Evaluation?",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Before therapy begins, your speech-language pathologist will complete a comprehensive evaluation to understand your child's communication strengths and challenges.",
-        ],
-      },
-      {
-        type: "list",
-        intro: "The evaluation may include:",
-        items: [
-          "Parent interviews",
-          "Observation during play",
-          "Speech and language assessments",
-          "Listening and comprehension activities",
-          "Social communication evaluation",
-          "Review of developmental history",
-        ],
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Based on the results, you'll receive recommendations and an individualized therapy plan with achievable goals.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "What Does a Typical Therapy Session Look Like?",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Speech therapy sessions are designed to be engaging, interactive, and age-appropriate. Rather than sitting at a table completing worksheets, many young children learn best through play.",
-        ],
-      },
-      {
-        type: "list",
-        intro: "During therapy, your child may participate in activities such as:",
-        items: [
-          "Playing with toys that encourage communication",
-          "Reading picture books together",
-          "Singing songs and nursery rhymes",
-          "Practicing requesting favorite items",
-          "Taking turns during games",
-          "Identifying objects and actions",
-          "Learning to answer simple questions",
-          "Building conversation skills",
-        ],
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Each activity is carefully selected to support your child's communication goals while keeping learning enjoyable.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "Why In-Home Speech Therapy Can Be Especially Helpful",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Many children with autism thrive in familiar environments. Receiving therapy at home can reduce anxiety, minimize distractions, and make it easier for children to engage with their therapist.",
-          "Home-based therapy also allows communication skills to be practiced during everyday routines, such as:",
-        ],
-      },
-      {
-        type: "list",
-        items: [
-          "Mealtime conversations",
-          "Playing with favorite toys",
-          "Bedtime reading",
-          "Getting dressed",
-          "Family activities",
-        ],
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Parents can observe therapy sessions, learn effective strategies, and continue practicing throughout the week.",
-          "Families looking to hire a pediatric speech therapist in Northwest Houston TX often choose home-based services because they provide individualized support while allowing children to learn in the environment where they feel most comfortable.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "Parent Involvement Makes a Difference",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Parents are one of the most important members of the therapy team. Children make the greatest progress when communication strategies are consistently reinforced at home.",
-        ],
-      },
-      {
-        type: "list",
-        intro: "Your speech-language pathologist may teach you how to:",
-        items: [
-          "Encourage your child to communicate naturally",
-          "Expand vocabulary during daily routines",
-          "Model simple language",
-          "Respond positively to communication attempts",
-          "Support conversations during play",
-          "Practice therapy goals between sessions",
-        ],
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Even a few minutes of intentional practice each day can strengthen the skills your child is learning during therapy.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "Communication Progress Takes Time",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Every child develops at their own pace. Some children begin using new words quickly, while others make gradual progress over months of consistent therapy.",
-        ],
-      },
-      {
-        type: "list",
-        intro:
-          "Success is measured in many different ways, including:",
-        items: [
-          "Increased eye contact",
-          "Better understanding of directions",
-          "More frequent communication attempts",
-          "Improved social interaction",
-          "Longer conversations",
-          "Greater confidence expressing wants and needs",
-        ],
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Celebrating small achievements helps motivate children and encourages continued growth.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "When Should You Seek Speech Therapy?",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Early intervention is one of the most effective ways to support communication development in children with autism.",
-        ],
-      },
-      {
-        type: "list",
-        intro: "You should consider scheduling an evaluation if your child:",
-        items: [
-          "Has delayed speech development",
-          "Rarely communicates with others",
-          "Has difficulty understanding language",
-          "Doesn't respond consistently to their name",
-          "Struggles with social interaction",
-          "Has difficulty expressing wants and needs",
-          "Frequently repeats words without meaningful communication",
-        ],
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "The earlier therapy begins, the more opportunities children have to develop strong communication skills before entering school.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "Finding the Right Speech Therapist",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Choosing a qualified speech-language pathologist who understands autism is an important step in your child's journey.",
-        ],
-      },
-      {
-        type: "list",
-        intro: "When searching for a therapist, look for someone who:",
-        items: [
-          "Has experience working with children with autism",
-          "Creates individualized treatment plans",
-          "Uses play-based therapy techniques",
-          "Encourages parent participation",
-          "Communicates regularly about progress",
-          "Provides therapy in environments where your child feels comfortable",
-        ],
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "If you're planning to hire a pediatric speech therapist in Northwest Houston TX, selecting a provider who offers personalized in-home services can make therapy more convenient and meaningful for your family.",
-        ],
-      },
-      {
-        type: "heading",
-        heading: "Helping Your Child Communicate with Confidence",
-      },
-      {
-        type: "paragraphs",
-        paragraphs: [
-          "Every child deserves the opportunity to connect with others, express their thoughts, and build meaningful relationships. With the right support, children with autism can develop stronger communication skills that improve their confidence at home, in school, and within their community.",
-          "At Expression Beyond Words PLLC, we provide compassionate, play-based speech therapy designed to meet the unique needs of every child. Families looking for a child speech therapist in Northwest Houston home service can count on our experienced team to deliver personalized care directly in the comfort of their home. We proudly serve Northwest Houston, including Spring, The Woodlands, Tomball, Conroe, Magnolia, Cypress, and Willis, helping children with autism strengthen their communication skills while empowering parents to support progress every step of the way.",
-          "If you're concerned about your child's communication development, an early speech and language evaluation can be the first step toward helping them reach their full potential.",
-        ],
-      },
-    ],
-  },
-  {
     slug: "when-should-my-child-start-speech-therapy",
     title: "When Should My Child Start Speech Therapy? Age-by-Age Milestones",
     description:
@@ -4032,10 +3739,328 @@ const allBlogPosts: readonly BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "speech-therapy-for-children-with-autism",
+    title: "Speech Therapy for Children with Autism: What Parents Should Expect",
+    description:
+      "What parents should expect from speech therapy for children with autism—evaluations, play-based sessions, in-home support, and how families can help progress.",
+    publishedAt: "2026-09-22",
+    featuredImage: {
+      src: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1600&q=80",
+      alt: "A young child playing with wooden toys, reflecting the play-based approach used in speech therapy for children with autism",
+      objectPosition: "center 40%",
+    },
+    blocks: [
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Receiving an autism diagnosis for your child can bring a mix of emotions and questions. One of the most common concerns parents have is how autism may affect their child's ability to communicate. While every child with autism is unique, many experience challenges with speech, language, and social communication that can make everyday interactions more difficult.",
+          "The good news is that speech therapy for children with autism can help them develop the communication skills they need to express themselves, build relationships, and participate more confidently in daily life. Understanding what to expect from speech therapy can help you feel more prepared and involved in your child's progress.",
+        ],
+      },
+      {
+        type: "heading",
+        heading: "How Autism Can Affect Communication",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Autism Spectrum Disorder (ASD) affects communication differently for every child. Some children may begin talking later than expected, while others develop a large vocabulary but struggle with conversations or understanding social cues.",
+        ],
+      },
+      {
+        type: "list",
+        intro: "Common communication challenges may include:",
+        items: [
+          "Delayed speech development",
+          "Limited vocabulary",
+          "Difficulty expressing wants and needs",
+          "Trouble understanding spoken language",
+          "Repeating words or phrases (echolalia), which can sometimes serve a meaningful communicative purpose",
+          "Challenges with turn-taking during conversations",
+          "Differences in social communication and interaction",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Since every child has different strengths and areas requiring further development, therapy is always tailored to the individual.",
+        ],
+      },
+      {
+        type: "heading",
+        heading: "What Is Speech Therapy for Children with Autism?",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Speech therapy focuses on helping children improve both verbal and nonverbal communication. A licensed speech-language pathologist evaluates your child's communication abilities and creates a personalized treatment plan based on their developmental level and goals.",
+        ],
+      },
+      {
+        type: "list",
+        intro: "Depending on your child's needs, therapy may focus on:",
+        items: [
+          "Developing first words",
+          "Expanding vocabulary",
+          "Improving sentence formation",
+          "Enhancing speech clarity",
+          "Strengthening listening and comprehension skills",
+          "Building social communication",
+          "Improving conversational skills",
+          "Using augmentative and alternative communication (AAC), such as gestures, signs, pictures, communication boards, or speech-generating devices, when appropriate",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "The ultimate goal is to help your child communicate more effectively in everyday situations.",
+        ],
+      },
+      {
+        type: "heading",
+        heading: "What Happens During the First Evaluation?",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Before therapy begins, your speech-language pathologist will complete a comprehensive evaluation to understand your child's communication strengths and challenges.",
+        ],
+      },
+      {
+        type: "list",
+        intro: "The evaluation may include:",
+        items: [
+          "Parent interviews",
+          "Observation during play",
+          "Speech and language standardized or criterion-based assessments",
+          "Listening and comprehension activities",
+          "Social communication evaluation",
+          "Review of developmental history",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Based on the results, you'll receive recommendations regarding your child's communication needs and whether speech-language therapy or other supports may be appropriate.",
+        ],
+      },
+      {
+        type: "heading",
+        heading: "What Does a Typical Therapy Session Look Like?",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Speech therapy sessions are designed to be engaging, interactive, and age-appropriate. Rather than relying solely on table-based activities, many young children benefit from learning through play and other engaging, age-appropriate activities.",
+        ],
+      },
+      {
+        type: "list",
+        intro: "During therapy, your child may participate in activities such as:",
+        items: [
+          "Playing with toys that encourage communication",
+          "Reading picture books together",
+          "Singing songs and nursery rhymes",
+          "Practicing requesting favorite items",
+          "Taking turns during games",
+          "Identifying objects and actions",
+          "Learning to answer simple questions",
+          "Building conversation skills",
+          "Learning to express feelings and emotions",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Each activity is carefully selected to support your child's communication goals while keeping learning enjoyable.",
+        ],
+      },
+      {
+        type: "heading",
+        heading: "Why In-Home Speech Therapy Can Be Especially Helpful",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "For some children with autism, a familiar environment can provide a comfortable setting for practicing communication skills. For some children, receiving therapy at home may provide a familiar setting that supports comfort and engagement during therapy.",
+          "Home-based therapy also allows communication skills to be practiced during everyday routines, such as:",
+        ],
+      },
+      {
+        type: "list",
+        items: [
+          "Mealtime conversations",
+          "Playing with favorite toys",
+          "Bedtime reading",
+          "Getting dressed",
+          "Family activities",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Parents can observe therapy sessions, learn effective strategies, and continue practicing throughout the week.",
+          [
+            "Families looking to ",
+            {
+              label:
+                "hire a pediatric speech therapist in Northwest Houston TX",
+              href: "/",
+            },
+            " may choose home-based services because they provide individualized support within a familiar environment.",
+          ],
+        ],
+      },
+      {
+        type: "heading",
+        heading: "Parent Involvement Makes a Difference",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Parents are one of the most important members of the therapy team. Children may benefit when communication strategies are consistently supported across everyday routines at home.",
+        ],
+      },
+      {
+        type: "list",
+        intro: "Your speech-language pathologist may teach you how to:",
+        items: [
+          "Encourage your child to communicate naturally",
+          "Expand vocabulary during daily routines",
+          "Model simple language",
+          "Respond positively to communication attempts",
+          "Support conversations during play",
+          "Practice therapy goals between sessions",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Even brief opportunities to practice communication during everyday routines can help your child use the skills they are developing in therapy.",
+        ],
+      },
+      {
+        type: "heading",
+        heading: "Communication Progress Takes Time",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Every child develops at their own pace. Some children begin using new words quickly, while others make gradual progress over months of consistent therapy.",
+        ],
+      },
+      {
+        type: "list",
+        intro: "Success is measured in many different ways, including:",
+        items: [
+          "Increased understanding of directions",
+          "More frequent or purposeful communication attempts",
+          "Improved ability to communicate wants and needs",
+          "Increased participation in social interactions",
+          "Greater ability to engage in back-and-forth communication",
+          "Greater confidence expressing thoughts, wants, and needs",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Celebrating small achievements helps motivate children and encourages continued growth.",
+        ],
+      },
+      {
+        type: "heading",
+        heading: "When Should You Seek Speech Therapy?",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Early intervention is one of the most effective ways to support communication development in children with autism.",
+        ],
+      },
+      {
+        type: "list",
+        intro: "You should consider scheduling an evaluation if your child:",
+        items: [
+          "Has delayed speech development",
+          "Rarely communicates with others",
+          "Has difficulty understanding language",
+          "Doesn't respond consistently to their name",
+          "Struggles with social interaction",
+          "Has difficulty expressing wants and needs",
+          "Frequently repeats words without meaningful communication",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Seeking an evaluation early can help families better understand their child's communication strengths and needs and identify appropriate supports.",
+        ],
+      },
+      {
+        type: "heading",
+        heading: "Finding the Right Speech Therapist",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Choosing a qualified speech-language pathologist who understands autism is an important step in your child's journey.",
+        ],
+      },
+      {
+        type: "list",
+        intro: "When searching for a therapist, look for someone who:",
+        items: [
+          "Has experience working with children with autism and understands a range of communication profiles",
+          "Creates individualized treatment plans",
+          "Uses play-based therapy techniques",
+          "Encourages parent participation",
+          "Communicates regularly about progress",
+          "Provides therapy in environments where your child feels comfortable",
+        ],
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          [
+            "If you're looking to ",
+            {
+              label:
+                "hire a pediatric speech therapist in Northwest Houston TX",
+              href: "/",
+            },
+            ", selecting a provider who offers personalized in-home services can make therapy more convenient and meaningful for your family.",
+          ],
+        ],
+      },
+      {
+        type: "heading",
+        heading: "Helping Your Child Communicate with Confidence",
+      },
+      {
+        type: "paragraphs",
+        paragraphs: [
+          "Every child deserves the opportunity to connect with others, express their thoughts, and build meaningful relationships. With the right support, children with autism can develop stronger communication skills that improve their confidence at home, in school, and within their community.",
+          "At Expression Beyond Words, we provide compassionate, play-based speech therapy designed to meet the unique needs of every child.",
+          [
+            "Families looking for ",
+            {
+              label: "child speech therapy in Northwest Houston",
+              href: "/",
+            },
+            " with convenient in-home services can receive personalized care in the comfort of their home.",
+          ],
+          "We proudly serve Northwest Houston, including Spring, The Woodlands, Tomball, Conroe, Magnolia, Cypress, and Willis, helping children with autism strengthen their communication skills while empowering parents to support progress every step of the way.",
+          "If you're concerned about your child's communication development, an early speech and language evaluation can be the first step toward helping them reach their full potential.",
+        ],
+      },
+    ],
+  },
 ];
 
 /** Currently live posts. Other entries in `allBlogPosts` are held back for now. */
 const publishedSlugs = [
+  "speech-therapy-for-children-with-autism",
   "speech-delay-vs-language-delay",
   "why-in-home-pediatric-speech-therapy-is-more-effective",
   "how-parents-can-improve-childs-speech-at-home",

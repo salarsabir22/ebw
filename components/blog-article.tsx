@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import { TextBlockContent } from "@/components/text-segments";
 import type { BlogBlock, BlogPost } from "@/content/blogs";
 import { cn } from "@/lib/utils";
 
@@ -30,7 +31,9 @@ function BlogBlockView({ block }: { block: BlogBlock }) {
         </h2>
         <div className="mt-4 space-y-4 text-lg leading-relaxed text-[var(--ebw-muted)]">
           {block.paragraphs.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
+            <p key={i}>
+              <TextBlockContent block={paragraph} />
+            </p>
           ))}
         </div>
       </section>
@@ -120,7 +123,9 @@ function BlogBlockView({ block }: { block: BlogBlock }) {
   return (
     <div className="mt-6 space-y-4 text-lg leading-relaxed text-[var(--ebw-muted)] first:mt-0">
       {block.paragraphs.map((paragraph, i) => (
-        <p key={i}>{paragraph}</p>
+        <p key={i}>
+          <TextBlockContent block={paragraph} />
+        </p>
       ))}
     </div>
   );
