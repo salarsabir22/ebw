@@ -2604,8 +2604,8 @@ const allBlogPosts: readonly BlogPost[] = [
       "Age-by-age communication milestones from birth to age 5, and when a speech and language evaluation may help families decide whether additional support could be beneficial.",
     publishedAt: "2026-10-02",
     featuredImage: {
-      src: "https://images.unsplash.com/photo-1515488044361-ce23c5909417?auto=format&fit=crop&w=1600&q=80",
-      alt: "A baby playing with wooden toys at home, reflecting early communication and play",
+      src: "/images/blog-speech-therapy-milestones.jpg",
+      alt: "A parent on the couch with a toddler and a baby, sharing a quiet moment together at home",
       objectPosition: "center 40%",
     },
     blocks: [
