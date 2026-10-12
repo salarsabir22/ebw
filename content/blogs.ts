@@ -14,6 +14,7 @@ export type BlogBlock =
   | {
       type: "table";
       headers: readonly string[];
+      
       rows: readonly (readonly string[])[];
     };
 
