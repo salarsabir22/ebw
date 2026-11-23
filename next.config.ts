@@ -1,9 +1,13 @@
 import path from "path";
+import { fileURLToPath } from "url";
 import type { NextConfig } from "next";
+
+// Next loads this config as ESM, so `__dirname` is not defined here.
+const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
 const nextConfig: NextConfig = {
   turbopack: {
-    root: path.join(__dirname),
+    root: rootDir,
   },
   images: {
     remotePatterns: [
