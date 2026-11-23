@@ -1,19 +1,23 @@
 "use client";
 
-import { useActionState, useEffect, useRef } from "react";
-import Link from "next/link";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { CheckIcon } from "lucide-react";
 import { submitInquiry, type InquiryState } from "@/actions/inquiry";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { contact } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 const initialState: InquiryState = { ok: false, message: "" };
 
-/** Refresh-safe counterpart of the in-place success panel (see app/thank-you). */
+/** Refresh-safe counterpart of the success dialog (see app/thank-you). */
 const THANK_YOU_PATH = "/thank-you";
 
 /**
@@ -30,86 +34,6 @@ function useThankYouUrl(sent: boolean) {
   }, [sent]);
 }
 
-function ThankYouPanel({
-  message,
-  compact,
-}: {
-  message: string;
-  compact: boolean;
-}) {
-  const panelRef = useRef<HTMLDivElement>(null);
-
-  // The form unmounts on success — move focus into the panel so the change is announced.
-  useEffect(() => {
-    panelRef.current?.focus();
-  }, []);
-
-  return (
-    <div
-      ref={panelRef}
-      tabIndex={-1}
-      role="status"
-      className={cn(
-        "relative rounded-2xl border bg-card shadow-[var(--shadow-soft)] outline-none",
-        compact
-          ? "w-full border-primary/40 p-5 sm:p-6 lg:p-7"
-          : "border-border p-6 sm:p-8",
-      )}
-    >
-      <span
-        aria-hidden
-        className="inline-flex size-11 items-center justify-center rounded-full bg-primary/10 text-primary"
-      >
-        <CheckIcon className="size-5" />
-      </span>
-      <p className="mt-4 text-sm font-semibold uppercase tracking-wide text-primary">
-        Inquiry received
-      </p>
-      <h2
-        className={cn(
-          "mt-1 text-balance font-display font-semibold tracking-tight text-foreground",
-          compact ? "text-xl sm:text-2xl" : "text-2xl",
-        )}
-      >
-        Thank you — we have your message
-      </h2>
-      <p className="mt-3 break-words text-sm leading-relaxed text-muted-foreground">
-        {message} There’s nothing else you need to do.
-      </p>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        Prefer to talk it through? Call{" "}
-        <a
-          href={`tel:${contact.phoneE164}`}
-          className="font-semibold text-primary underline-offset-4 hover:underline"
-        >
-          {contact.phoneDisplay}
-        </a>
-        .
-      </p>
-      <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-        <Link
-          href="/services"
-          className={cn(
-            buttonVariants({ variant: "default", size: "sm" }),
-            "min-h-10 px-4 text-sm",
-          )}
-        >
-          Explore services
-        </Link>
-        <Link
-          href="/"
-          className={cn(
-            buttonVariants({ variant: "outline", size: "sm" }),
-            "min-h-10 px-4 text-sm",
-          )}
-        >
-          Back to home
-        </Link>
-      </div>
-    </div>
-  );
-}
-
 export function InquiryForm({
   pagePath,
   variant = "default",
@@ -119,8 +43,16 @@ export function InquiryForm({
   variant?: "default" | "compact";
   idPrefix?: string;
 }) {
+  const [popupOpen, setPopupOpen] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
   const [state, formAction, pending] = useActionState(
-    submitInquiry,
+    async (prevState: InquiryState, formData: FormData) => {
+      const next = await submitInquiry(prevState, formData);
+      // state.ok stays true after a completed send, so drive the popup from the
+      // action result — deriving it from state would never reopen it.
+      if (next.ok) setPopupOpen(true);
+      return next;
+    },
     initialState,
   );
   const compact = variant === "compact";
@@ -128,13 +60,15 @@ export function InquiryForm({
   const hpId = fieldId("ebw_hp_fax");
   useThankYouUrl(state.ok);
 
-  // Success replaces the whole form: no second submit, no stale fields to resend.
-  if (state.ok) {
-    return <ThankYouPanel message={state.message} compact={compact} />;
+  function closePopup() {
+    setPopupOpen(false);
+    // Already delivered — clear the fields so the same inquiry can't be sent twice.
+    formRef.current?.reset();
   }
 
   return (
     <form
+      ref={formRef}
       action={formAction}
       className={cn(
         "relative rounded-2xl border bg-card shadow-[var(--shadow-soft)]",
@@ -143,6 +77,25 @@ export function InquiryForm({
           : "border-border p-6 sm:p-8",
       )}
     >
+      <Dialog
+        open={popupOpen}
+        onOpenChange={(next) => {
+          if (!next) closePopup();
+        }}
+      >
+        <DialogContent className="max-w-sm text-center">
+          <span
+            aria-hidden
+            className="mx-auto inline-flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary"
+          >
+            <CheckIcon className="size-5" />
+          </span>
+          <DialogTitle className="sr-only">Inquiry received</DialogTitle>
+          <DialogDescription className="break-words text-base leading-relaxed text-foreground">
+            {state.message}
+          </DialogDescription>
+        </DialogContent>
+      </Dialog>
       <input type="hidden" name="pagePath" value={pagePath} />
       {/* Honeypot: do not name this "website" — browsers autofill that and skip the real send. */}
       <div
@@ -231,7 +184,7 @@ export function InquiryForm({
           </label>
         </div>
       </div>
-      {state.message ? (
+      {!state.ok && state.message ? (
         <p
           className="mt-4 rounded-lg bg-destructive/10 px-4 py-3 text-sm text-destructive"
           role="alert"
